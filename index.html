@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <!-- AJUSTE MOBILE -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Método VMP</title>
 
@@ -24,6 +23,7 @@
 
     .container {
       max-width: 680px;
+      width: 100%;
       padding: 40px 20px;
       text-align: center;
     }
@@ -31,7 +31,7 @@
     h1 {
       font-family: 'Playfair Display', serif;
       font-size: 42px;
-      color: #d4af37; /* dourado */
+      color: #d4af37;
       margin-bottom: 10px;
     }
 
@@ -39,7 +39,7 @@
       font-size: 16px;
       letter-spacing: 3px;
       font-weight: 300;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       color: #ffffff;
     }
 
@@ -47,7 +47,7 @@
       font-size: 18px;
       line-height: 1.7;
       color: #cccccc;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     /* BOTÃO VMP — OVAL PREMIUM */
@@ -60,10 +60,11 @@
       font-size: 15px;
       font-weight: 500;
       letter-spacing: 1.2px;
-      border-radius: 999px; /* OVAL TOTAL */
+      border-radius: 999px;
       transition: all 0.35s ease;
       box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
       margin-top: 25px;
+      display: none; /* botão inicialmente escondido */
     }
 
     .vmp-button:hover {
@@ -72,12 +73,20 @@
       box-shadow: 0 14px 38px rgba(212, 175, 55, 0.35);
     }
 
-    iframe {
+    /* Vídeo responsivo 16:9 */
+    .video-wrapper {
+      position: relative;
       width: 100%;
-      max-width: 640px;
-      height: 360px;
-      margin: 20px auto;
-      display: block;
+      padding-bottom: 56.25%;
+      margin: 20px 0;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       border: none;
     }
 
@@ -85,6 +94,14 @@
       margin-top: 42px;
       font-size: 14px;
       color: #777;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 14px; }
+      p { font-size: 16px; }
+      .vmp-button { font-size: 14px; padding: 14px 48px; }
     }
   </style>
 </head>
@@ -94,24 +111,52 @@
     <h1>Método VMP</h1>
     <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
 
-    <!-- EMBED YOUTUBE NÃO LISTADO -->
-    <iframe src="https://www.youtube.com/embed/k9WPSm1WpDU?rel=0" allowfullscreen></iframe>
-
+    <p>
+      A maioria dos homens tenta ser ouvido. <br>
+      Poucos aprendem a ser sentidos.
+    </p>
     <p>
       O que você está prestes a assistir<br>
       não é sobre falar melhor.<br>
       É sobre sustentar presença.
     </p>
 
-    <!-- BOTÃO PARA AS 7 ATIVAÇÕES -->
-    <a href="http://ativacoes.presencasilenciosa.com.br" class="vmp-button">
-      ACESSAR AS 7 ATIVAÇÕES GRATUITAS
-    </a>
-
     <div class="footer">
       Assista com atenção. O entendimento vem depois.
     </div>
+
+    <!-- EMBED YOUTUBE NÃO LISTADO RESPONSIVO -->
+    <div class="video-wrapper">
+      <iframe id="vmp-video" src="https://www.youtube.com/embed/k9WPSm1WpDU?rel=0&enablejsapi=1" allowfullscreen></iframe>
+    </div>
+
+    <!-- BOTÃO PARA AS 7 ATIVAÇÕES -->
+    <a id="vmp-button" href="http://ativacoes.presencasilenciosa.com.br" class="vmp-button">
+      ACESSAR AS 7 ATIVAÇÕES GRATUITAS
+    </a>
   </div>
 
+  <!-- SCRIPT PARA MOSTRAR BOTÃO 25s ANTES DO FINAL -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('vmp-video', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    function onPlayerStateChange(event) {
+      if(event.data === YT.PlayerState.PLAYING) {
+        // Mostrar botão aos 176 segundos (2:56)
+        setTimeout(() => {
+          document.getElementById('vmp-button').style.display = 'inline-block';
+        }, 176000); // 176 segundos * 1000 = 176000 ms
+      }
+    }
+  </script>
+
 </body>
-  </html>
+</html>
