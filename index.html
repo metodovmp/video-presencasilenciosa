@@ -126,7 +126,7 @@
     <div class="video-wrapper">
       <iframe
         id="vmp-video"
-        src="https://www.youtube.com/embed/k9WPSm1WpDU?rel=0&enablejsapi=1"
+        src="https://www.youtube.com/embed/rmiBtT9c-jw?rel=0&enablejsapi=1"
         allowfullscreen>
       </iframe>
     </div>
@@ -139,7 +139,7 @@
     </a>
   </div>
 
-  <!-- SCRIPT VTURB-LIKE (TRAVADO) -->
+  <!-- SCRIPT VTURB-LIKE (BOTÃO TRAVADO) -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     let player;
@@ -159,8 +159,8 @@
 
         const tempoAtual = player.getCurrentTime();
 
-        // 2:56 = 176 segundos
-        if (tempoAtual >= 176) {
+        // 2:52 = 172 segundos
+        if (tempoAtual >= 172) {
           document.getElementById('vmp-button').style.display = 'inline-block';
           botaoLiberado = true;
         }
