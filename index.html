@@ -32,14 +32,14 @@
       font-family: 'Playfair Display', serif;
       font-size: 42px;
       color: #d4af37;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
 
     h2 {
       font-size: 16px;
       letter-spacing: 3px;
       font-weight: 300;
-      margin-bottom: 30px;
+      margin-bottom: 44px; /* MAIS RESPIRO */
       color: #ffffff;
     }
 
@@ -47,7 +47,30 @@
       font-size: 18px;
       line-height: 1.7;
       color: #cccccc;
-      margin-bottom: 20px;
+      margin-bottom: 34px; /* MAIS ESPAÇO ENTRE BLOCOS */
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin: 34px 0 12px; /* MAIS EM CIMA / MENOS EM BAIXO */
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .footer {
+      margin-top: 8px;   /* COLADO AO VÍDEO */
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: #777;
     }
 
     .vmp-button {
@@ -62,36 +85,13 @@
       border-radius: 999px;
       transition: all 0.35s ease;
       box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
-      margin-top: 25px;
+      margin-top: 10px; /* BOTÃO PRÓXIMO DO TEXTO */
     }
 
     .vmp-button:hover {
       background-color: #b8962e;
       transform: translateY(-2px);
       box-shadow: 0 14px 38px rgba(212, 175, 55, 0.35);
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      margin: 20px 0;
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    .footer {
-      margin-top: 42px;
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 15px;
     }
 
     @media (max-width: 600px) {
@@ -120,7 +120,6 @@
     Você vai sentir antes de entender
   </p>
 
-  <!-- VÍDEO -->
   <div class="video-wrapper">
     <iframe
       id="vmp-video"
@@ -129,12 +128,10 @@
     </iframe>
   </div>
 
-  <!-- ORIENTAÇÃO PÓS-VÍDEO -->
   <div class="footer">
     Assista com atenção. O entendimento vem depois.
   </div>
 
-  <!-- BOTÃO -->
   <a
     id="vmp-button"
     href="http://ativacoes.presencasilenciosa.com.br"
@@ -143,34 +140,32 @@
   </a>
 </div>
 
-  <!-- SCRIPT VTURB-LIKE (BOTÃO TRAVADO) -->
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <script>
-    let player;
-    let botaoLiberado = false;
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  let player;
+  let botaoLiberado = false;
 
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('vmp-video', {
-        events: {
-          'onReady': iniciarMonitoramento
-        }
-      });
-    }
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('vmp-video', {
+      events: {
+        'onReady': iniciarMonitoramento
+      }
+    });
+  }
 
-    function iniciarMonitoramento() {
-      setInterval(() => {
-        if (!player || botaoLiberado) return;
+  function iniciarMonitoramento() {
+    setInterval(() => {
+      if (!player || botaoLiberado) return;
 
-        const tempoAtual = player.getCurrentTime();
+      const tempoAtual = player.getCurrentTime();
 
-        // 2:52 = 172 segundos
-        if (tempoAtual >= 172) {
-          document.getElementById('vmp-button').style.display = 'inline-block';
-          botaoLiberado = true;
-        }
-      }, 500);
-    }
-  </script>
+      if (tempoAtual >= 172) {
+        document.getElementById('vmp-button').style.display = 'inline-block';
+        botaoLiberado = true;
+      }
+    }, 500);
+  }
+</script>
 
 </body>
 </html>
