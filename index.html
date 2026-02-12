@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Método VMP</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
@@ -24,7 +23,7 @@
     .container {
       width: 100%;
       max-width: 100%;
-      padding: 40px 20px; /* mantém espaçamento lateral */
+      padding: 40px 20px;
       text-align: center;
     }
 
@@ -39,7 +38,7 @@
       font-size: 16px;
       letter-spacing: 3px;
       font-weight: 300;
-      margin-bottom: 44px; /* espaçamento */
+      margin-bottom: 44px;
       color: #ffffff;
     }
 
@@ -50,13 +49,12 @@
       margin-bottom: 34px;
     }
 
-    /* Ajuste do wrapper para remover respiro lateral e inferior */
     .video-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 */
-      margin: 0;               /* remove espaço extra em cima/baixo */
-      overflow: hidden;        /* corta qualquer excesso do vídeo */
+      padding-bottom: 56.25%;
+      margin: 0;
+      overflow: hidden;
     }
 
     .video-wrapper iframe {
@@ -87,7 +85,7 @@
       letter-spacing: 1.2px;
       border-radius: 999px;
       transition: all 0.35s ease;
-      margin-top: 10px; /* BOTÃO PRÓXIMO DO TEXTO */
+      margin-top: 10px;
     }
 
     .vmp-button:hover {
@@ -125,7 +123,7 @@
   <div class="video-wrapper">
     <iframe
       id="vmp-video"
-      src="https://www.youtube.com/embed/5TTbeIGi7zU?rel=0&enablejsapi=1"
+      src="https://www.youtube.com/embed/TlaQ6ZdRRik?rel=0&enablejsapi=1"
       allowfullscreen>
     </iframe>
   </div>
@@ -161,7 +159,7 @@
 
       const tempoAtual = player.getCurrentTime();
 
-      if (tempoAtual >= 172) {
+      if (tempoAtual >= 125) {
         document.getElementById('vmp-button').style.display = 'inline-block';
         botaoLiberado = true;
       }
