@@ -67,11 +67,25 @@
       display: block;
     }
 
+    .footer-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+      margin-bottom: 30px;
+    }
+
     .footer {
-      margin-top: 8px;
-      margin-bottom: 18px;
-      font-size: 14px;
+      max-width: 340px;
+      font-size: 13px;
       color: #777;
+    }
+
+    .cta-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
     }
 
     .vmp-button {
@@ -85,13 +99,18 @@
       letter-spacing: 1.2px;
       border-radius: 999px;
       transition: all 0.35s ease;
-      margin-top: 10px;
     }
 
     .vmp-button:hover {
       background-color: #b8962e;
       transform: translateY(-2px);
       box-shadow: 0 14px 38px rgba(212, 175, 55, 0.35);
+    }
+
+    #botao-legenda {
+      display: none;
+      color: #777;
+      font-size: 12px;
     }
 
     @media (max-width: 600px) {
@@ -102,73 +121,82 @@
     }
   </style>
 </head>
+
 <body>
+  <div class="container">
 
-<div class="container">
-  <h1>Método VMP</h1>
-  <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
+    <h1>Método VMP</h1>
+    <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
 
-  <p>
-    A maioria dos homens tenta ser ouvido <br>
-    Poucos aprendem a ser sentidos
-  </p>
+    <p>
+      Existe um bloqueio silencioso<br>
+      que enfraquece sua presença<br>
+      mesmo quando você tenta se posicionar
+    </p>
 
-  <p>
-    O que você está prestes a assistir<br>
-    não é sobre falar melhor<br>
-    É sobre sustentar presença<br>
-    Você vai sentir antes de entender
-  </p>
+    <p>
+      Este vídeo não é sobre falar melhor<br>
+      É sobre reorganizar seu eixo interno<br>
+      Presença não se força<br>
+      Se sustenta
+    </p>
 
-  <div class="video-wrapper">
-    <iframe
-      id="vmp-video"
-      src="https://www.youtube.com/embed/TlaQ6ZdRRik?rel=0&enablejsapi=1"
-      allowfullscreen>
-    </iframe>
+    <div class="video-wrapper">
+      <iframe
+        id="vmp-video"
+        src="https://www.youtube.com/embed/0OtjUPTof2A?rel=0&enablejsapi=1"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        Assista com atenção. O entendimento vem depois.
+      </div>
+    </div>
+
+    <div class="cta-wrapper">
+      <a
+        id="vmp-button"
+        href="http://iniciacao.presencasilenciosa.com.br/"
+        class="vmp-button">
+        INICIAR EXPERIÊNCIA
+      </a>
+
+      <div id="botao-legenda">
+        Presença não se força. Se sustenta.
+      </div>
+    </div>
+
   </div>
 
-  <div class="footer">
-    Assista com atenção. O entendimento vem depois.
-  </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let player;
+    let botaoLiberado = false;
 
-<a
-    id="vmp-button"
-    href="http://iniciacao.presencasilenciosa.com.br/"
-    class="vmp-button">
-    INICIAR EXPERIÊNCIA
-</a>
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('vmp-video', {
+        events: {
+          'onReady': iniciarMonitoramento
+        }
+      });
+    }
 
-<div style="color:#777; font-size:12px; margin-top:4px;">
-  Comece a sustentar sua presença
-</div>
+    function iniciarMonitoramento() {
+      setInterval(() => {
+        if (!player || botaoLiberado) return;
 
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  let player;
-  let botaoLiberado = false;
+        const tempoAtual = player.getCurrentTime();
 
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('vmp-video', {
-      events: {
-        'onReady': iniciarMonitoramento
-      }
-    });
-  }
-
-  function iniciarMonitoramento() {
-    setInterval(() => {
-      if (!player || botaoLiberado) return;
-
-      const tempoAtual = player.getCurrentTime();
-
-      if (tempoAtual >= 125) {
-        document.getElementById('vmp-button').style.display = 'inline-block';
-        botaoLiberado = true;
-      }
-    }, 500);
-  }
-</script>
-
+        // Botão + legenda aparecem aos 134 segundos (25 segundos antes do final)
+        if (tempoAtual >= 134) {
+          document.getElementById('vmp-button').style.display = 'inline-block';
+          document.getElementById('botao-legenda').style.display = 'block';
+          botaoLiberado = true;
+        }
+      }, 500);
+    }
+  </script>
 </body>
-</html>
+        </html>
