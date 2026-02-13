@@ -67,21 +67,19 @@
       display: block;
     }
 
-    /* ===== FOOTER ===== */
     .footer {
       font-size: 13px;
       color: #777;
       margin-top: 8px;   /* próximo do vídeo */
-      margin-bottom: 0;  /* remove espaço extra embaixo */
+      margin-bottom: 0;
       text-align: center;
     }
 
-    /* ===== BOTÃO + LEGENDA ===== */
     .cta-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;         /* espaço entre botão e legenda do botão */
+      gap: 12px;
       margin-top: 18px;  /* afasta botão do footer */
     }
 
@@ -102,12 +100,6 @@
       background-color: #b8962e;
       transform: translateY(-2px);
       box-shadow: 0 14px 38px rgba(212, 175, 55, 0.35);
-    }
-
-    #botao-legenda {
-      display: none;
-      color: #777;
-      font-size: 12px;
     }
 
     @media (max-width: 600px) {
@@ -157,10 +149,6 @@
         class="vmp-button">
         INICIAR EXPERIÊNCIA
       </a>
-
-      <div id="botao-legenda">
-        Presença não se força. Se sustenta.
-      </div>
     </div>
 
   </div>
@@ -184,10 +172,9 @@
 
         const tempoAtual = player.getCurrentTime();
 
-        // Botão + legenda aparecem aos 134 segundos (25s antes do final)
-        if (tempoAtual >= 134) {
+        // Botão aparece aos 133 segundos (25s antes do final)
+        if (tempoAtual >= 133) {
           document.getElementById('vmp-button').style.display = 'inline-block';
-          document.getElementById('botao-legenda').style.display = 'block';
           botaoLiberado = true;
         }
       }, 500);
