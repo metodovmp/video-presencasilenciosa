@@ -12,7 +12,7 @@
       margin: 0;
       padding: 0;
       background-color: #000;
-      color: #fff;
+      color: #ffffff;
       font-family: 'Inter', sans-serif;
       display: flex;
       align-items: center;
@@ -39,13 +39,13 @@
       letter-spacing: 3px;
       font-weight: 300;
       margin-bottom: 44px;
-      color: #fff;
+      color: #ffffff;
     }
 
     p {
       font-size: 18px;
       line-height: 1.7;
-      color: #ccc;
+      color: #cccccc;
       margin-bottom: 34px;
     }
 
@@ -67,13 +67,13 @@
       display: block;
     }
 
-    /* ===== FOOTER AJUSTADO ===== */
+    /* ===== FOOTER ===== */
     .footer {
-      max-width: 340px;
       font-size: 13px;
       color: #777;
+      margin-top: 8px;   /* próximo do vídeo */
+      margin-bottom: 0;  /* remove espaço extra embaixo */
       text-align: center;
-      margin: 6px auto 0 auto; /* mais próximo da tela do vídeo */
     }
 
     /* ===== BOTÃO + LEGENDA ===== */
@@ -81,8 +81,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px; /* espaço entre botão e legenda */
-      margin-top: 14px; /* distância mínima do footer */
+      gap: 12px;         /* espaço entre botão e legenda do botão */
+      margin-top: 18px;  /* afasta botão do footer */
     }
 
     .vmp-button {
@@ -172,7 +172,9 @@
 
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('vmp-video', {
-        events: { 'onReady': iniciarMonitoramento }
+        events: {
+          'onReady': iniciarMonitoramento
+        }
       });
     }
 
@@ -182,7 +184,7 @@
 
         const tempoAtual = player.getCurrentTime();
 
-        // Botão + legenda aparecem aos 134 segundos
+        // Botão + legenda aparecem aos 134 segundos (25s antes do final)
         if (tempoAtual >= 134) {
           document.getElementById('vmp-button').style.display = 'inline-block';
           document.getElementById('botao-legenda').style.display = 'block';
