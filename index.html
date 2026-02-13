@@ -70,8 +70,8 @@
     .footer-wrapper {
       display: flex;
       justify-content: center;
-      margin-top: 24px;
-      margin-bottom: 30px;
+      margin-top: 8px;  /* menor espaço acima do footer */
+      margin-bottom: 12px; /* menor espaço abaixo do footer */
     }
 
     .footer {
@@ -144,7 +144,7 @@
     <div class="video-wrapper">
       <iframe
         id="vmp-video"
-        src="https://www.youtube.com/embed/0OtjUPTof2A?rel=0&enablejsapi=1"
+        src="https://www.youtube.com/embed/J4I6JhGi3mo?rel=0&enablejsapi=1"
         allowfullscreen>
       </iframe>
     </div>
@@ -189,7 +189,7 @@
 
         const tempoAtual = player.getCurrentTime();
 
-        // Botão + legenda aparecem aos 134 segundos (25 segundos antes do final)
+        // Botão + legenda aparecem aos 134 segundos
         if (tempoAtual >= 134) {
           document.getElementById('vmp-button').style.display = 'inline-block';
           document.getElementById('botao-legenda').style.display = 'block';
@@ -199,4 +199,4 @@
     }
   </script>
 </body>
-        </html>
+</html>
