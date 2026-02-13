@@ -68,17 +68,12 @@
     }
 
     /* ===== FOOTER AJUSTADO ===== */
-    .footer-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-top: 8px;  /* mais próximo do vídeo */
-      margin-bottom: 12px; /* distância inferior */
-    }
-
     .footer {
+      max-width: 340px;
       font-size: 13px;
       color: #777;
-      text-align: center; /* centraliza o texto */
+      margin: 12px auto 0 auto; /* centraliza e aproxima do vídeo */
+      text-align: center;
     }
 
     /* ===== BOTÃO + LEGENDA ===== */
@@ -86,8 +81,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
-      margin-top: 10px;
+      gap: 6px; /* pequeno espaçamento entre botão e legenda */
+      margin-top: 10px; /* distância mínima do footer */
     }
 
     .vmp-button {
@@ -113,7 +108,6 @@
       display: none;
       color: #777;
       font-size: 12px;
-      text-align: center;
     }
 
     @media (max-width: 600px) {
@@ -152,10 +146,8 @@
       </iframe>
     </div>
 
-    <div class="footer-wrapper">
-      <div class="footer">
-        Assista com atenção.
-      </div>
+    <div class="footer">
+      Assista com atenção.
     </div>
 
     <div class="cta-wrapper">
