@@ -70,7 +70,7 @@
     .footer {
       font-size: 13px;
       color: #777;
-      margin-top: 8px;   /* próximo do vídeo */
+      margin-top: 4px;   /* aproximado da tela */
       margin-bottom: 0;
       text-align: center;
     }
@@ -133,7 +133,7 @@
 <div class="video-wrapper">
   <iframe
     id="vmp-video"
-    src="https://www.youtube.com/embed/iMLkGn0uYPY?rel=0&enablejsapi=1"
+    src="https://www.youtube.com/embed/Al7aRH9AIes?rel=0&enablejsapi=1"
     allowfullscreen>
   </iframe>
 </div>
@@ -172,8 +172,8 @@
 
         const tempoAtual = player.getCurrentTime();
 
-        // Botão aparece aos 133 segundos (25s antes do final)
-        if (tempoAtual >= 133) {
+        // Botão aparece 25s antes do final (2:42 - 0:25 = 137s)
+        if (tempoAtual >= 137) {
           document.getElementById('vmp-button').style.display = 'inline-block';
           botaoLiberado = true;
         }
