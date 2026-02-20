@@ -49,15 +49,14 @@
       margin-bottom: 34px;
     }
 
-    /* Video wrapper com borda cinza sutil */
     .video-wrapper {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
       margin: 0;
       overflow: hidden;
-      border: 2px solid #777; /* borda cinza sutil */
-      border-radius: 4px;     /* arredondamento discreto */
+      border: 2px solid #777;
+      border-radius: 4px;
     }
 
     .video-wrapper iframe {
@@ -73,7 +72,7 @@
     .footer {
       font-size: 13px;
       color: #777;
-      margin-top: 4px;   /* aproximado da tela */
+      margin-top: 4px;
       margin-bottom: 0;
       text-align: center;
     }
@@ -83,7 +82,7 @@
       flex-direction: column;
       align-items: center;
       gap: 12px;
-      margin-top: 18px;  /* afasta botão do footer */
+      margin-top: 18px;
     }
 
     .vmp-button {
@@ -136,7 +135,7 @@
 <div class="video-wrapper">
   <iframe
     id="vmp-video"
-    src="https://www.youtube.com/embed/Al7aRH9AIes?rel=0&enablejsapi=1"
+    src="https://www.youtube.com/embed/qRFQK4fOmYo?rel=0&enablejsapi=1"
     allowfullscreen>
   </iframe>
 </div>
@@ -150,7 +149,7 @@
         id="vmp-button"
         href="http://iniciacao.presencasilenciosa.com.br/"
         class="vmp-button">
-        INICIAR EXPERIÊNCIA
+        INICIAR EXPERIIÊNCIA
       </a>
     </div>
 
@@ -175,8 +174,8 @@
 
         const tempoAtual = player.getCurrentTime();
 
-        // Botão aparece 25s antes do final (2:42 - 0:25 = 137s)
-        if (tempoAtual >= 137) {
+        // Botão aparece em 2:19 (139 segundos)
+        if (tempoAtual >= 139) {
           document.getElementById('vmp-button').style.display = 'inline-block';
           botaoLiberado = true;
         }
