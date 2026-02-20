@@ -31,15 +31,17 @@
       font-family: 'Playfair Display', serif;
       font-size: 42px;
       color: #d4af37;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     h2 {
-      font-size: 16px;
-      letter-spacing: 3px;
+      font-size: 15px;
+      letter-spacing: 3.5px;
       font-weight: 300;
-      margin-bottom: 44px;
+      margin-bottom: 36px;
       color: #ffffff;
+      opacity: 0.85;
     }
 
     p {
@@ -49,15 +51,26 @@
       margin-bottom: 34px;
     }
 
-    /* AJUSTE AQUI 👇 borda mais suave no tom do cinza */
+    /* 👇 LEGENDA PREMIUM */
+    .premium-caption {
+      color:#6f6f6f;
+      font-size:11px;
+      letter-spacing:3.5px;
+      opacity:0.75;
+      margin-top:-14px;
+      margin-bottom:22px;
+      font-weight:500;
+    }
+
+    /* 👇 BORDA MAIS PREMIUM */
     .video-wrapper {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
       margin: 0;
       overflow: hidden;
-      border: 1px solid rgba(119,119,119,0.35);
-      border-radius: 4px;
+      border: 1px solid rgba(119,119,119,0.25);
+      border-radius: 6px;
     }
 
     .video-wrapper iframe {
@@ -71,11 +84,13 @@
     }
 
     .footer {
-      font-size: 13px;
+      font-size: 12px;
       color: #777;
-      margin-top: 4px;
+      margin-top: 6px;
       margin-bottom: 0;
       text-align: center;
+      letter-spacing: 1px;
+      opacity: 0.7;
     }
 
     .cta-wrapper {
@@ -107,8 +122,9 @@
 
     @media (max-width: 600px) {
       h1 { font-size: 32px; }
-      h2 { font-size: 14px; }
+      h2 { font-size: 13px; }
       p { font-size: 16px; }
+      .premium-caption { font-size:10px; }
       .vmp-button { font-size: 14px; padding: 14px 48px; }
     }
   </style>
@@ -120,7 +136,7 @@
 <h1>Método VMP</h1>
 <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
 
-<p style="color:#777; font-size:13px; letter-spacing:3px; opacity:0.8; margin-top:-10px;">
+<p class="premium-caption">
 7 DIAS DE ALINHAMENTO DA SUA PRESENÇA
 </p>
 
@@ -144,47 +160,47 @@
   </iframe>
 </div>
 
-    <div class="footer">
-      Assista com atenção.
-    </div>
+<div class="footer">
+  Assista com atenção.
+</div>
 
-    <div class="cta-wrapper">
-      <a
-        id="vmp-button"
-        href="http://iniciacao.presencasilenciosa.com.br/"
-        class="vmp-button">
-        INICIAR EXPERIÊNCIA
-      </a>
-    </div>
+<div class="cta-wrapper">
+  <a
+    id="vmp-button"
+    href="http://iniciacao.presencasilenciosa.com.br/"
+    class="vmp-button">
+    INICIAR EXPERIÊNCIA
+  </a>
+</div>
 
   </div>
 
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <script>
-    let player;
-    let botaoLiberado = false;
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+let player;
+let botaoLiberado = false;
 
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('vmp-video', {
-        events: {
-          'onReady': iniciarMonitoramento
-        }
-      });
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('vmp-video', {
+    events: {
+      'onReady': iniciarMonitoramento
     }
+  });
+}
 
-    function iniciarMonitoramento() {
-      setInterval(() => {
-        if (!player || botaoLiberado) return;
+function iniciarMonitoramento() {
+  setInterval(() => {
+    if (!player || botaoLiberado) return;
 
-        const tempoAtual = player.getCurrentTime();
+    const tempoAtual = player.getCurrentTime();
 
-        // Botão aparece em 2:19 (139 segundos)
-        if (tempoAtual >= 139) {
-          document.getElementById('vmp-button').style.display = 'inline-block';
-          botaoLiberado = true;
-        }
-      }, 500);
+    if (tempoAtual >= 139) {
+      document.getElementById('vmp-button').style.display = 'inline-block';
+      botaoLiberado = true;
     }
-  </script>
+  }, 500);
+}
+</script>
+
 </body>
 </html>
