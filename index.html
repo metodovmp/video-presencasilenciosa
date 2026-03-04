@@ -155,7 +155,7 @@
 <div class="video-wrapper">
   <iframe
     id="vmp-video"
-    src="https://www.youtube.com/embed/qRFQK4fOmYo?rel=0&enablejsapi=1"
+    src="https://www.youtube.com/embed/WZ7n1os8u7g?rel=0&enablejsapi=1"
     allowfullscreen>
   </iframe>
 </div>
@@ -194,7 +194,7 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    if (tempoAtual >= 139) {
+    if (tempoAtual >= 137) {  // 25 segundos antes do fim do vídeo (162 - 25 = 137)
       document.getElementById('vmp-button').style.display = 'inline-block';
       botaoLiberado = true;
     }
