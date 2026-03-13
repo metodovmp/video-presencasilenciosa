@@ -153,7 +153,7 @@
 <div class="video-wrapper">
   <iframe
     id="vmp-video"
-    src="https://www.youtube.com/embed/vkcvPYtKd3s?rel=0&enablejsapi=1"
+    src="https://www.youtube.com/embed/HcQxkg2CyNQ?rel=0&enablejsapi=1"
     allowfullscreen>
   </iframe>
 </div>
@@ -165,7 +165,7 @@
 <div class="cta-wrapper">
   <a
     id="vmp-button"
-    href="http://iniciacao.presencasilenciosa.com.br/"
+    href="https://iniciacao.presencasilenciosa.com.br/"
     class="vmp-button">
     INICIAR EXPERIÊNCIA
   </a>
@@ -192,7 +192,8 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    if (tempoAtual >= 150) {  
+    // Vídeo novo 3:09 = 189s; botão aparece 25s antes → 189 - 25 = 164
+    if (tempoAtual >= 164) {  
       document.getElementById('vmp-button').style.display = 'inline-block';
       botaoLiberado = true;
     }
