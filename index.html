@@ -49,7 +49,7 @@
       line-height: 1.7;
       color: #cccccc;
       margin-bottom: 34px;
-      font-weight: 300; /* Mantém a finura estilo premium */
+      font-weight: 300;
     }
 
     .premium-caption {
@@ -154,7 +154,7 @@
 <div class="video-wrapper">
   <iframe
     id="vmp-video"
-    src="https://www.youtube.com/embed/HcQxkg2CyNQ?rel=0&enablejsapi=1"
+    src="https://www.youtube.com/embed/llP_pdNp5s8?rel=0&enablejsapi=1"
     allowfullscreen>
   </iframe>
 </div>
@@ -193,8 +193,8 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    // Vídeo novo 3:09 = 189s; botão aparece 25s antes → 189 - 25 = 164
-    if (tempoAtual >= 164) {  
+    // Vídeo novo 3:19 = 199s; botão aparece 25s antes → 199 - 25 = 174
+    if (tempoAtual >= 174) {  
       document.getElementById('vmp-button').style.display = 'inline-block';
       botaoLiberado = true;
     }
