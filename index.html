@@ -46,19 +46,19 @@
 
     p {
       font-size: 18px;
-      line-height: 1.7;
+      line-height: 1.9;
       color: #cccccc;
-      margin-bottom: 34px;
+      margin-bottom: 38px;
       font-weight: 300;
     }
 
     .premium-caption {
-      color:#6f6f6f;
-      font-size:11px;
-      letter-spacing:3.5px;
-      opacity:0.75;
-      margin-top:-14px;
-      margin-bottom:22px;
+      color: rgba(255,255,255,0.72);
+      font-size:12px;
+      letter-spacing:4px;
+      opacity:0.9;
+      margin-top:-10px;
+      margin-bottom:26px;
       font-weight:500;
     }
 
@@ -123,7 +123,7 @@
       h1 { font-size: 32px; }
       h2 { font-size: 13px; }
       p { font-size: 16px; }
-      .premium-caption { font-size:10px; }
+      .premium-caption { font-size:11px; }
       .vmp-button { font-size: 14px; padding: 14px 48px; }
     }
   </style>
@@ -136,25 +136,54 @@
 <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
 
 <p class="premium-caption">
-7 DIAS DE REALINHAMENTO DA SUA PRESENÇA
-</p>
-
-  <p>
-  Stephen Hawking provou que pessoas silenciosas têm as mentes mais fortes e eloquentes<br>
-  Antes mesmo de falar, o mundo percebe você
+EM 7 DIAS · REALINHAMENTO DA SUA PRESENÇA
 </p>
 
 <p>
-  Este vídeo não é sobre falar melhor<br>
-  É sobre reorganizar seu eixo interno<br>
-  Presença não se força<br>
-  Se sustenta
+Existe algo que quase ninguém percebe…<br><br>
+
+Antes da fala…<br>
+Antes do gesto…<br>
+Antes até da intenção…<br><br>
+
+O ambiente já respondeu a você.<br><br>
+
+A maioria tenta ajustar por fora.<br>
+Palavras.<br>
+Postura.<br>
+Expressão.<br><br>
+
+Mas o que realmente define tudo…<br>
+vem de um lugar mais silencioso.<br><br>
+
+Um eixo interno.<br><br>
+
+Quando isso está desalinhado…<br>
+nada se sustenta.<br><br>
+
+Mas quando isso começa a se ajustar…<br><br>
+
+Algo muda.<br><br>
+
+Sem esforço.<br>
+Sem aviso.<br><br>
+
+As pessoas começam a sentir.<br><br>
+
+E em poucos dias…<br>
+a forma como você é percebido começa a mudar.<br><br>
+
+Alguns homens não disputam atenção…<br>
+e ainda assim… são percebidos.<br><br>
+
+Não é sorte.<br>
+Nem carisma.
 </p>
 
 <div class="video-wrapper">
   <iframe
     id="vmp-video"
-    src="https://www.youtube.com/embed/Lt5CE80pKw4?rel=0&enablejsapi=1"
+    src="https://www.youtube.com/embed/dtA34ryGIac?rel=0&enablejsapi=1"
     allowfullscreen>
   </iframe>
 </div>
@@ -193,8 +222,8 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    // Vídeo novo 3:19 = 199s; botão aparece 25s antes → 199 - 25 = 174
-    if (tempoAtual >= 174) {  
+    // 3:13 (193s) - 24s = 169s → botão em 2:49
+    if (tempoAtual >= 169) {  
       document.getElementById('vmp-button').style.display = 'inline-block';
       botaoLiberado = true;
     }
