@@ -211,7 +211,7 @@ Nem carisma
     INICIAR O PROCESSO DE 7 DIAS
   </a>
 
-  <div style="color:#B0B0B0; font-size:13px; margin-top:6px; letter-spacing:0.5px;">
+  <div id="vmp-subtext" style="display:none; color:#B0B0B0; font-size:13px; margin-top:6px; letter-spacing:0.5px;">
     Acesso imediato após a ativação
   </div>
 </div>
@@ -237,9 +237,9 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    // 3:13 (193s) - 24s = 169s → botão em 2:49
     if (tempoAtual >= 169) {  
       document.getElementById('vmp-button').style.display = 'inline-block';
+      document.getElementById('vmp-subtext').style.display = 'block';
       botaoLiberado = true;
     }
   }, 500);
