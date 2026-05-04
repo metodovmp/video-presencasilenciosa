@@ -36,24 +36,25 @@
       font-size: 15px;
       letter-spacing: 3px;
       font-weight: 300;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       opacity: 0.85;
     }
 
-    p {
-      font-size: 18px;
-      line-height: 1.9;
-      color: #cccccc;
-      margin-bottom: 30px;
+    .footer {
+      font-size: 12px;
+      color: #aaa;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
+    /* VIDEO SEM BORDA BRANCA */
     .video-wrapper {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 6px;
+      border-radius: 8px;
+      background: #000;
     }
 
     .video-wrapper iframe {
@@ -62,22 +63,45 @@
       height: 100%;
       top: 0;
       left: 0;
+      border: none;
     }
 
-    /* ===== IMAGEM 16:9 ===== */
+    /* BOTÃO */
+    .vmp-button {
+      display: none;
+      padding: 16px 32px;
+      background-color: #d4af37;
+      color: #000;
+      text-decoration: none;
+      border-radius: 999px;
+      margin-top: 20px;
+      font-weight: 500;
+    }
+
+    .cta-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    #vmp-subtext {
+      display: none;
+      color: #B0B0B0;
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    /* ESPAÇAMENTO GLOBAL */
+    .spacer {
+      height: 60px;
+    }
+
+    /* IMAGENS 16:9 */
     .img-container {
       width: 100%;
-      margin: 60px auto 20px;
       aspect-ratio: 16/9;
       background: #111;
-
-      /* 🔥 detalhe premium quando não tem imagem */
-      background-image: radial-gradient(
-        circle at center,
-        rgba(255,255,255,0.04),
-        rgba(0,0,0,0.6)
-      );
-
       border-radius: 10px;
       overflow: hidden;
     }
@@ -92,24 +116,18 @@
       color: #d4af37;
       font-family: 'Playfair Display', serif;
       font-size: 20px;
-      margin: 15px 0 10px;
+      margin: 20px 0 10px;
     }
 
     .texto-curto {
       font-size: 16px;
       color: #e0e0e0;
-      margin-bottom: 40px;
       line-height: 1.7;
     }
 
-    .vmp-button {
-      display: none;
-      padding: 16px 32px;
-      background-color: #d4af37;
-      color: #000;
-      text-decoration: none;
-      border-radius: 999px;
-      margin-top: 20px;
+    /* CTA FINAL */
+    .cta-final {
+      margin-top: 60px;
     }
 
     .cta-final .vmp-button {
@@ -122,6 +140,7 @@
       margin-top: 6px;
     }
 
+    /* GARANTIA */
     .garantia {
       font-size: 14px;
       color: #ccc;
@@ -147,7 +166,10 @@
   <h1>Método VMP</h1>
   <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
 
-  <!-- VSL TOPO -->
+  <!-- TEXTO ACIMA DO VÍDEO -->
+  <div class="footer">Assista com atenção.</div>
+
+  <!-- VSL -->
   <div class="video-wrapper">
     <iframe
       id="vmp-video"
@@ -156,10 +178,15 @@
     </iframe>
   </div>
 
-  <!-- BOTÃO COM DELAY (MANTIDO) -->
-  <a id="vmp-button" href="https://go.pepperpay.com.br/vncnu" class="vmp-button">
-    ACESSAR OS 7 PROTOCOLOS
-  </a>
+  <!-- BOTÃO COM DELAY -->
+  <div class="cta-wrapper">
+    <a id="vmp-button" href="https://go.pepperpay.com.br/vncnu" class="vmp-button">
+      ACESSAR OS 7 PROTOCOLOS
+    </a>
+    <div id="vmp-subtext">Acesso imediato</div>
+  </div>
+
+  <div class="spacer"></div>
 
   <!-- IMG 1 -->
   <div class="img-container">
@@ -173,8 +200,10 @@
   <div class="texto-curto">
     Você não é lido pelo que fala.<br>
     É lido pelo estado que carrega.<br><br>
-    Antes da interação, o ambiente já formou uma resposta sobre você — sem que nada tenha sido dito.
+    Antes da interação, o ambiente já formou uma resposta sobre você.
   </div>
+
+  <div class="spacer"></div>
 
   <!-- IMG 2 -->
   <div class="img-container">
@@ -187,7 +216,7 @@
 
   <div class="texto-curto">
     Existe um eixo invisível que influencia como você é percebido.<br><br>
-    Quando esse eixo muda, a forma como os outros reagem também muda — sem esforço, sem performance.
+    Quando esse eixo muda, o ambiente responde diferente — sem esforço.
   </div>
 
   <!-- CTA FINAL -->
@@ -200,9 +229,8 @@
 
   <!-- GARANTIA -->
   <div class="garantia">
-    O Código de Defesa do Consumidor (Art. 49) garante 7 dias para solicitação de reembolso em compras online.<br><br>
-    Nós ampliamos essa condição para 14 dias de garantia incondicional.<br><br>
-    <strong>14 dias de garantia incondicional</strong>
+    O Código de Defesa do Consumidor (Art. 49) garante 7 dias para reembolso.<br><br>
+    Nós ampliamos para <strong>14 dias de garantia incondicional</strong>.
   </div>
 
   <!-- RODAPÉ -->
@@ -235,6 +263,7 @@ function iniciarMonitoramento() {
 
     if (tempoAtual >= 169) {
       document.getElementById('vmp-button').style.display = 'inline-block';
+      document.getElementById('vmp-subtext').style.display = 'block';
       botaoLiberado = true;
     }
   }, 500);
