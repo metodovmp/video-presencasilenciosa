@@ -11,18 +11,16 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #111; /* AJUSTADO: antes era #000 */
+      background-color: #111;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
       display: flex;
-      align-items: center;
       justify-content: center;
-      min-height: 100vh;
     }
 
     .container {
       width: 100%;
-      max-width: 100%;
+      max-width: 900px;
       padding: 40px 20px;
       text-align: center;
     }
@@ -32,15 +30,13 @@
       font-size: 42px;
       color: #d4af37;
       margin-bottom: 10px;
-      letter-spacing: 1px;
     }
 
     h2 {
       font-size: 15px;
-      letter-spacing: 3.5px;
+      letter-spacing: 3px;
       font-weight: 300;
-      margin-bottom: 36px;
-      color: #ffffff;
+      margin-bottom: 30px;
       opacity: 0.85;
     }
 
@@ -48,56 +44,62 @@
       font-size: 18px;
       line-height: 1.9;
       color: #cccccc;
-      margin-bottom: 38px;
-      font-weight: 300;
-    }
-
-    .premium-caption {
-      color: rgba(255,255,255,0.72);
-      font-size: 12px;
-      letter-spacing: 4px;
-      opacity: 0.9;
-      margin-top: -10px;
-      margin-bottom: 26px;
-      font-weight: 500;
+      margin-bottom: 30px;
     }
 
     .video-wrapper {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
-      margin: 0;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12); /* AJUSTADO */
+      border: 1px solid rgba(255,255,255,0.12);
       border-radius: 6px;
     }
 
     .video-wrapper iframe {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-      border: none;
-      display: block;
+      top: 0;
+      left: 0;
     }
 
-    .footer {
-      font-size: 12px;
-      color: #777;
-      margin-top: 6px;
-      margin-bottom: 0;
-      text-align: center;
-      letter-spacing: 1px;
-      opacity: 0.7;
+    /* ===== IMAGEM 16:9 ===== */
+    .img-container {
+      width: 100%;
+      margin: 60px auto 20px;
+      aspect-ratio: 16/9;
+      background: #111;
+
+      /* 🔥 detalhe premium quando não tem imagem */
+      background-image: radial-gradient(
+        circle at center,
+        rgba(255,255,255,0.04),
+        rgba(0,0,0,0.6)
+      );
+
+      border-radius: 10px;
+      overflow: hidden;
     }
 
-    .cta-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-top: 18px;
+    .img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .subtitulo {
+      color: #d4af37;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      margin: 15px 0 10px;
+    }
+
+    .texto-curto {
+      font-size: 16px;
+      color: #e0e0e0;
+      margin-bottom: 40px;
+      line-height: 1.7;
     }
 
     .vmp-button {
@@ -106,171 +108,138 @@
       background-color: #d4af37;
       color: #000;
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 1.2px;
       border-radius: 999px;
-      transition: all 0.35s ease;
+      margin-top: 20px;
     }
 
-    .vmp-button:hover {
-      background-color: #b8962e;
-      transform: translateY(-2px);
-      box-shadow: 0 14px 38px rgba(212, 175, 55, 0.35);
+    .cta-final .vmp-button {
+      display: inline-block;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 32px;
-      }
+    .cta-sub {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 6px;
+    }
 
-      h2 {
-        font-size: 13px;
-      }
+    .garantia {
+      font-size: 14px;
+      color: #ccc;
+      margin-top: 40px;
+      line-height: 1.7;
+    }
 
-      p {
-        font-size: 16px;
-      }
+    .garantia strong {
+      color: #d4af37;
+    }
 
-      .premium-caption {
-        font-size: 11px;
-      }
-
-      .vmp-button {
-        font-size: 14px;
-        padding: 14px 28px;
-      }
+    .footer-final {
+      font-size: 12px;
+      color: #777;
+      margin-top: 20px;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
-    <h1>Método VMP</h1>
+  <h1>Método VMP</h1>
+  <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
 
-    <div style="height:12px;"></div>
-
-    <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
-
-    <p class="premium-caption">
-      EM 7 PROTOCOLOS, VOCÊ PARA DE PARECER INSEGURO — MESMO SEM FALAR MUITO
-    </p>
-
-    <p>
-      Existe algo que quase ninguém percebe…<br><br>
-
-      Antes da fala…<br>
-      Antes do gesto…<br>
-      Antes da intenção…<br><br>
-
-      o ambiente já formou uma leitura de você.<br><br>
-
-      A maioria tenta ajustar isso depois.<br>
-      Com fala, postura ou comportamento.<br><br>
-
-      Mas a percepção já foi criada antes disso.<br><br>
-
-      O que define isso não é o que você faz.<br>
-      É o estado que você sustenta sem perceber.<br><br>
-
-      Um eixo interno que organiza como você é percebido<br>
-      antes de qualquer ação.<br><br>
-
-      Quando esse eixo está instável…<br>
-      nada se sustenta.<br><br>
-
-      Você entra.<br>
-      Conversa.<br>
-      Participa.<br><br>
-
-      E ainda assim… não gera impacto real.<br><br>
-
-      Quando esse eixo começa a se ajustar…<br><br>
-
-      a forma como o ambiente responde muda.<br><br>
-
-      Sem esforço.<br>
-      Sem performance.<br><br>
-
-      Alguns homens não tentam chamar atenção…<br>
-      e ainda assim são percebidos.<br><br>
-
-      Não é sorte.<br>
-      Nem carisma.
-    </p>
-
-    <p>
-      Não é sobre aprender a se expressar melhor.<br><br>
-
-      É sobre parar de transmitir insegurança antes mesmo de falar.<br><br>
-
-      Em 7 PROTOCOLOS,<br>
-      você reorganiza o que sustenta sua presença<br>
-      antes da fala existir.<br><br>
-
-      E quando isso muda…<br><br>
-
-      o ambiente responde diferente.
-    </p>
-
-    <div class="footer" style="margin-bottom: 10px;">
-      Assista com atenção.
-    </div>
-
-    <div class="video-wrapper">
-      <iframe
-        id="vmp-video"
-        src="https://www.youtube.com/embed/dtA34ryGIac?rel=0&enablejsapi=1"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <div class="cta-wrapper">
-      <a
-        id="vmp-button"
-        href="https://go.pepperpay.com.br/vncnu"
-        class="vmp-button">
-        ACESSAR OS 7 PROTOCOLOS
-      </a>
-
-      <div
-        id="vmp-subtext"
-        style="display:none; color:#B0B0B0; font-size:13px; margin-top:6px; letter-spacing:0.5px;">
-        Acesso imediato
-      </div>
-    </div>
-
+  <!-- VSL TOPO -->
+  <div class="video-wrapper">
+    <iframe
+      id="vmp-video"
+      src="https://www.youtube.com/embed/dtA34ryGIac?rel=0&enablejsapi=1"
+      allowfullscreen>
+    </iframe>
   </div>
 
-  <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- BOTÃO COM DELAY (MANTIDO) -->
+  <a id="vmp-button" href="https://go.pepperpay.com.br/vncnu" class="vmp-button">
+    ACESSAR OS 7 PROTOCOLOS
+  </a>
 
-  <script>
-    let player;
-    let botaoLiberado = false;
+  <!-- IMG 1 -->
+  <div class="img-container">
+    <img src="img/img1.png" onerror="this.src='img/placeholder.png'">
+  </div>
 
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('vmp-video', {
-        events: {
-          'onReady': iniciarMonitoramento
-        }
-      });
+  <div class="subtitulo">
+    O que as pessoas percebem antes de qualquer palavra
+  </div>
+
+  <div class="texto-curto">
+    Você não é lido pelo que fala.<br>
+    É lido pelo estado que carrega.<br><br>
+    Antes da interação, o ambiente já formou uma resposta sobre você — sem que nada tenha sido dito.
+  </div>
+
+  <!-- IMG 2 -->
+  <div class="img-container">
+    <img src="img/img2.png" onerror="this.src='img/placeholder.png'">
+  </div>
+
+  <div class="subtitulo">
+    O ajuste interno que muda a leitura social
+  </div>
+
+  <div class="texto-curto">
+    Existe um eixo invisível que influencia como você é percebido.<br><br>
+    Quando esse eixo muda, a forma como os outros reagem também muda — sem esforço, sem performance.
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="cta-final">
+    <a href="https://go.pepperpay.com.br/vncnu" class="vmp-button">
+      ACESSAR OS 7 PROTOCOLOS
+    </a>
+    <div class="cta-sub">Acesso imediato após a confirmação</div>
+  </div>
+
+  <!-- GARANTIA -->
+  <div class="garantia">
+    O Código de Defesa do Consumidor (Art. 49) garante 7 dias para solicitação de reembolso em compras online.<br><br>
+    Nós ampliamos essa condição para 14 dias de garantia incondicional.<br><br>
+    <strong>14 dias de garantia incondicional</strong>
+  </div>
+
+  <!-- RODAPÉ -->
+  <div class="footer-final">
+    Copyright 2026 – VMP<br>
+    Todos os direitos reservados.
+  </div>
+
+</div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+let player;
+let botaoLiberado = false;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('vmp-video', {
+    events: {
+      'onReady': iniciarMonitoramento
     }
+  });
+}
 
-    function iniciarMonitoramento() {
-      setInterval(() => {
-        if (!player || botaoLiberado) return;
+function iniciarMonitoramento() {
+  setInterval(() => {
+    if (!player || botaoLiberado) return;
 
-        const tempoAtual = player.getCurrentTime();
+    const tempoAtual = player.getCurrentTime();
 
-        if (tempoAtual >= 169) {
-          document.getElementById('vmp-button').style.display = 'inline-block';
-          document.getElementById('vmp-subtext').style.display = 'block';
-          botaoLiberado = true;
-        }
-      }, 500);
+    if (tempoAtual >= 169) {
+      document.getElementById('vmp-button').style.display = 'inline-block';
+      botaoLiberado = true;
     }
-  </script>
+  }, 500);
+}
+</script>
 
 </body>
 </html>
