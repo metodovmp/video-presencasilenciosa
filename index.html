@@ -41,13 +41,12 @@
     }
 
     .footer {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
-    /* VIDEO SEM BORDA BRANCA */
     .video-wrapper {
       position: relative;
       width: 100%;
@@ -66,7 +65,6 @@
       border: none;
     }
 
-    /* BOTÃO */
     .vmp-button {
       display: none;
       padding: 16px 32px;
@@ -76,6 +74,17 @@
       border-radius: 999px;
       margin-top: 20px;
       font-weight: 500;
+    }
+
+    /* 🔥 ANIMAÇÃO */
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0.6); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(212,175,55,0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0); }
+    }
+
+    .vmp-button.pulse {
+      animation: pulse 1.5s infinite;
     }
 
     .cta-wrapper {
@@ -92,12 +101,10 @@
       margin-top: 6px;
     }
 
-    /* ESPAÇAMENTO GLOBAL */
     .spacer {
       height: 60px;
     }
 
-    /* IMAGENS 16:9 */
     .img-container {
       width: 100%;
       aspect-ratio: 16/9;
@@ -125,7 +132,6 @@
       line-height: 1.7;
     }
 
-    /* CTA FINAL */
     .cta-final {
       margin-top: 60px;
     }
@@ -140,7 +146,6 @@
       margin-top: 6px;
     }
 
-    /* GARANTIA */
     .garantia {
       font-size: 14px;
       color: #ccc;
@@ -168,19 +173,16 @@
   
 <div style="height:12px;"></div>
   
-  <!-- TEXTO ACIMA DO VÍDEO -->
   <div class="footer">Assista com atenção.</div>
 
-  <!-- VSL -->
   <div class="video-wrapper">
     <iframe
       id="vmp-video"
-      src="https://www.youtube.com/embed/dtA34ryGIac?rel=0&enablejsapi=1"
+      src="https://www.youtube.com/embed/RxKo5wAtajo?rel=0&enablejsapi=1"
       allowfullscreen>
     </iframe>
   </div>
 
-  <!-- BOTÃO COM DELAY -->
   <div class="cta-wrapper">
     <a id="vmp-button" href="https://go.pepperpay.com.br/vncnu" class="vmp-button">
       ACESSAR OS 7 PROTOCOLOS
@@ -190,9 +192,8 @@
 
   <div class="spacer"></div>
 
-  <!-- IMG 1 -->
   <div class="img-container">
-  <img src="img/img001.png" onerror="this.src='img/placeholder.png'">
+    <img src="img/img001.png" onerror="this.src='img/placeholder.png'">
   </div>
 
   <div class="subtitulo">
@@ -207,10 +208,9 @@
 
   <div class="spacer"></div>
 
-  <!-- IMG 2 -->
-<div class="img-container">
-  <img src="img/img002.png" onerror="this.src='img/placeholder.png'">
-</div>
+  <div class="img-container">
+    <img src="img/img002.png" onerror="this.src='img/placeholder.png'">
+  </div>
 
   <div class="subtitulo">
     O ajuste interno que muda a leitura social
@@ -221,7 +221,6 @@
     Quando esse eixo muda, o ambiente responde diferente — sem esforço.
   </div>
 
-  <!-- CTA FINAL -->
   <div class="cta-final">
     <a href="https://go.pepperpay.com.br/vncnu" class="vmp-button">
       ACESSAR OS 7 PROTOCOLOS
@@ -229,13 +228,11 @@
     <div class="cta-sub">Acesso imediato após a confirmação</div>
   </div>
 
-  <!-- GARANTIA -->
   <div class="garantia">
     O Código de Defesa do Consumidor (Art. 49) garante 7 dias para reembolso.<br><br>
     Nós ampliamos para <strong>14 dias de garantia incondicional</strong>.
   </div>
 
-  <!-- RODAPÉ -->
   <div class="footer-final">
     Copyright 2026 – VMP<br>
     Todos os direitos reservados.
@@ -259,15 +256,20 @@ function onYouTubeIframeAPIReady() {
 
 function iniciarMonitoramento() {
   setInterval(() => {
-    if (!player || botaoLiberado) return;
+    if (!player) return;
 
     const tempoAtual = player.getCurrentTime();
 
-    if (tempoAtual >= 169) {
+    if (tempoAtual >= 210 && !botaoLiberado) {
       document.getElementById('vmp-button').style.display = 'inline-block';
       document.getElementById('vmp-subtext').style.display = 'block';
       botaoLiberado = true;
     }
+
+    if (tempoAtual >= 212) {
+      document.getElementById('vmp-button').classList.add('pulse');
+    }
+
   }, 500);
 }
 </script>
