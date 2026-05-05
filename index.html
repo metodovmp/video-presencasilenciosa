@@ -76,7 +76,6 @@
       font-weight: 500;
     }
 
-    /* 🔥 ANIMAÇÃO */
     @keyframes pulse {
       0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0.6); }
       70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(212,175,55,0); }
@@ -173,7 +172,7 @@
   
 <div style="height:12px;"></div>
   
-  <div class="footer">Assista com atenção.</div>
+  <div class="footer">Assista com atenção</div>
 
   <div class="video-wrapper">
     <iframe
@@ -223,7 +222,7 @@
 
   <div class="cta-final">
     <a href="https://go.pepperpay.com.br/vncnu" class="vmp-button">
-      ACESSAR OS 7 PROTOCOLOS
+      QUERO ACESSAR OS 7 PROTOCOLOS
     </a>
     <div class="cta-sub">Acesso imediato após a confirmação</div>
   </div>
@@ -260,7 +259,7 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    if (tempoAtual >= 210 && !botaoLiberado) {
+    if (tempoAtual >= 211 && !botaoLiberado) {
       document.getElementById('vmp-button').style.display = 'inline-block';
       document.getElementById('vmp-subtext').style.display = 'block';
       botaoLiberado = true;
