@@ -79,19 +79,19 @@
       transition: all 0.3s ease;
     }
 
-    /* 🔹 BOTÃO PREMIUM GRANDE */
+    /* 🔹 CTA COMPACTO ESTRATÉGICO */
     .vmp-button-large{
       display:flex !important;
 
       justify-content:center;
       align-items:center;
 
-      width:92%;
-      max-width:760px;
+      width:auto;
+      max-width:unset;
 
       margin:0 auto;
 
-      padding:16px 22px;
+      padding:16px 34px;
 
       font-size:15px;
       font-weight:500;
@@ -230,8 +230,11 @@
     @media (max-width:600px){
 
       .vmp-button-large{
-        width:94%;
-        padding:15px 20px;
+
+        width:88%;
+
+        padding:15px 22px;
+
         font-size:14px;
       }
 
@@ -384,7 +387,7 @@ const finalBtn = document.getElementById('finalBtn');
 
 finalBtn.addEventListener('click', () => {
 
-  finalBtn.innerText = "Ajustando percepção…";
+  finalBtn.innerText = "Realinhando presença…";
 
   finalBtn.style.opacity = "0.9";
 
