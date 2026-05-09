@@ -74,6 +74,35 @@
       border-radius: 999px;
       margin-top: 20px;
       font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    /* 🔹 BOTÃO PREMIUM GRANDE */
+    .vmp-button-large{
+      display:flex !important;
+
+      justify-content:center;
+      align-items:center;
+
+      width:92%;
+      max-width:760px;
+
+      margin:0 auto;
+
+      padding:16px 22px;
+
+      font-size:15px;
+      font-weight:500;
+
+      letter-spacing:0.5px;
+
+      box-sizing:border-box;
+    }
+
+    .vmp-button:hover{
+      transform: translateY(-2px);
     }
 
     @keyframes pulse {
@@ -133,10 +162,6 @@
 
     .cta-final {
       margin-top: 60px;
-    }
-
-    .cta-final .vmp-button {
-      display: inline-block;
     }
 
     .cta-sub {
@@ -202,6 +227,16 @@
       top: 0;
     }
 
+    @media (max-width:600px){
+
+      .vmp-button-large{
+        width:94%;
+        padding:15px 20px;
+        font-size:14px;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -231,19 +266,26 @@
   </div>
 
   <!-- 🔹 BULLETS INSERIDOS -->
-  <div class="vsl-bullets">
-    <h3>O que começa a mudar em você em 7 dias:</h3>
-    <ul>
-      <li>Você começa a desenvolver uma presença que não depende de esforço ou validação externa</li>
-      <li>Sua forma de agir e se expressar passa a transmitir mais controle, calma e segurança</li>
-      <li>As pessoas naturalmente passam a te notar, respeitar e reagir diferente à sua presença</li>
-    </ul>
-  </div>
+<div class="vsl-bullets">
+  <h3>O que começa a mudar em você em 7 dias:</h3>
 
-<div class="spacer"></div>
+  <ul>
+    <li>
+      Você começa a desenvolver uma presença mais firme, sem depender de validação externa
+    </li>
+
+    <li>
+      Sua forma de agir e se expressar passa a transmitir mais calma, controle e consistência
+    </li>
+
+    <li>
+      O ambiente começa a perceber sua presença de maneira diferente — sem esforço, sem necessidade de chamar atenção
+    </li>
+  </ul>
+</div>
 
 <div class="img-container">
-  <img src="img/img0001.jpg" onerror="this.src='img/placeholder.png'">
+  <img src="img/img001.jpg" onerror="this.src='img/placeholder.png'">
 </div>
 
 <div class="subtitulo">
@@ -277,10 +319,18 @@
 <div class="spacer"></div>
 
   <div class="cta-final">
-    <a href="https://go.pepperpay.com.br/vncnu" class="vmp-button">
+
+    <button id="finalBtn"
+            class="vmp-button vmp-button-large">
+
       QUERO ACESSAR OS 7 PROTOCOLOS
-    </a>
-    <div class="cta-sub">Acesso imediato após a confirmação</div>
+
+    </button>
+
+    <div class="cta-sub">
+      Acesso imediato após a confirmação
+    </div>
+
   </div>
 
   <div class="garantia">
@@ -327,6 +377,27 @@ function iniciarMonitoramento() {
 
   }, 500);
 }
+
+/* 🔹 LEITURA DO BOTÃO FINAL */
+
+const finalBtn = document.getElementById('finalBtn');
+
+finalBtn.addEventListener('click', () => {
+
+  finalBtn.innerText = "Ajustando percepção…";
+
+  finalBtn.style.opacity = "0.9";
+
+  finalBtn.disabled = true;
+
+  setTimeout(() => {
+
+    window.location.href =
+    "https://go.pepperpay.com.br/vncnu";
+
+  }, 1500);
+
+});
 </script>
 
 </body>
