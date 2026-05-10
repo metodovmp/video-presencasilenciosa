@@ -255,9 +255,9 @@
 
   <div class="video-wrapper">
     <iframe
-      id="vmp-video"
-      src="https://www.youtube.com/embed/RxKo5wAtajo?rel=0&enablejsapi=1"
-      allowfullscreen>
+  id="vmp-video"
+  src="https://www.youtube.com/embed/e-J2JgfyuWI?rel=0&enablejsapi=1"
+  allowfullscreen>
     </iframe>
   </div>
 
@@ -370,13 +370,13 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    if (tempoAtual >= 211 && !botaoLiberado) {
+    if (tempoAtual >= 205 && !botaoLiberado) {
       document.getElementById('vmp-button').style.display = 'inline-block';
       document.getElementById('vmp-subtext').style.display = 'block';
       botaoLiberado = true;
     }
 
-    if (tempoAtual >= 212) {
+    if (tempoAtual >= 206) {
       document.getElementById('vmp-button').classList.add('pulse');
     }
 
