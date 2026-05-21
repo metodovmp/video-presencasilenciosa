@@ -373,13 +373,13 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    // 🔹 3:54 → botão aparece
-    if (tempoAtual >= 234 && !botaoLiberado) {
-      document.getElementById('vmp-button').style.display = 'inline-block';
-      document.getElementById('vmp-subtext').style.display = 'block';
-      botaoLiberado = true;
-    }
-
+    // 🔹 3:57 → botão aparece
+if (tempoAtual >= 237 && !botaoLiberado) {
+  document.getElementById('vmp-button').style.display = 'inline-block';
+  document.getElementById('vmp-subtext').style.display = 'block';
+  botaoLiberado = true;
+}
+    
     // 🔹 4:26 → botão começa pulsar
     if (tempoAtual >= 266) {
       document.getElementById('vmp-button').classList.add('pulse');
