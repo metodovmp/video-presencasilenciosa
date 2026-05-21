@@ -256,7 +256,7 @@
   <div class="video-wrapper">
     <iframe
   id="vmp-video"
-  src="https://www.youtube.com/embed/e-J2JgfyuWI?rel=0&enablejsapi=1"
+  src="https://www.youtube.com/embed/wx1uT0LOBCo?rel=0&enablejsapi=1"
   allowfullscreen>
     </iframe>
   </div>
@@ -373,13 +373,15 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    if (tempoAtual >= 206 && !botaoLiberado) {
+    // 🔹 3:54 → botão aparece
+    if (tempoAtual >= 234 && !botaoLiberado) {
       document.getElementById('vmp-button').style.display = 'inline-block';
       document.getElementById('vmp-subtext').style.display = 'block';
       botaoLiberado = true;
     }
 
-    if (tempoAtual >= 207) {
+    // 🔹 4:26 → botão começa pulsar
+    if (tempoAtual >= 266) {
       document.getElementById('vmp-button').classList.add('pulse');
     }
 
@@ -409,4 +411,4 @@ finalBtn.addEventListener('click', () => {
 </script>
 
 </body>
-  </html>
+</html>
