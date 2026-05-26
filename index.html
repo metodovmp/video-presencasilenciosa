@@ -257,7 +257,7 @@ Desenvolva presença, autoridade e precisão comportamental
   <div class="video-wrapper">
   <iframe
     id="vmp-video"
-    src="https://www.youtube.com/embed/S_7mmcuhSao?rel=0&enablejsapi=1"
+    src="https://www.youtube.com/embed/tMEI38_mBBs?rel=0&enablejsapi=1"
     allowfullscreen>
   </iframe>
   </div>
@@ -377,20 +377,20 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    // 🔹 3:56 → botão aparece
-if (tempoAtual >= 236 && !botaoLiberado) {
+    // 🔹 4:01 → botão aparece
+if (tempoAtual >= 241 && !botaoLiberado) {
   document.getElementById('vmp-button').style.display = 'inline-block';
   document.getElementById('vmp-subtext').style.display = 'block';
   botaoLiberado = true;
-  }
-    
-    // 🔹 4:26 → botão começa pulsar
-    if (tempoAtual >= 266) {
-      document.getElementById('vmp-button').classList.add('pulse');
-    }
-
-  }, 500);
 }
+
+// 🔹 4:31 → botão começa pulsar
+if (tempoAtual >= 271) {
+  document.getElementById('vmp-button').classList.add('pulse');
+}
+
+}, 500);
+  }
 
 /* 🔹 LEITURA DO BOTÃO FINAL */
 
