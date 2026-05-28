@@ -224,7 +224,7 @@
 <body>
 <div class="container">
 
-<h1 style="color:#FFD700; font-size:28px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:10px; text-shadow:0 0 12px rgba(212,175,55,0.18);">
+  <h1 style="color:#FFD700; font-size:28px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:10px; text-shadow:0 0 12px rgba(212,175,55,0.18);">
 Você foi escaneado em 3s.<br>
 Aqui tá a leitura.
 </h1>
@@ -237,13 +237,23 @@ Aqui tá a leitura.
   
   <div class="footer">Play obrigatório pra quem cansou de ser ignorado</div>
 
-  <div class="video-wrapper">
-<iframe
-  id="vmp-video"
-  src="https://www.youtube.com/embed/tMEI38_mBBs?enablejsapi=1&rel=0&modestbranding=1&controls=1&disablekb=1&showinfo=0&fs=0&iv_load_policy=3"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
+  <!-- AJUSTE 1: THUMB FAKE PRA SUMIR COM LIXO DO YOUTUBE -->
+  <div class="video-wrapper" id="video-container" style="cursor:pointer;">
+    <div id="vmp-thumb" style="position:absolute; top:0; left:0; width:100%; height:100%; background:#000 url('https://img.youtube.com/vi/tMEI38_mBBs/maxresdefault.jpg') center/cover; z-index:2; display:flex; align-items:center; justify-content:center; border-radius:8px;">
+      <div style="width:68px; height:48px; background:rgba(0,0,0,0.8); border-radius:12px; display:flex; align-items:center; justify-content:center;">
+        <div style="width:0; height:0; border-left:18px solid #fff; border-top:11px solid transparent; border-bottom:11px solid transparent; margin-left:4px;"></div>
+      </div>
+    </div>
+    
+    <iframe
+      id="vmp-video"
+      src=""
+      data-src="https://www.youtube.com/embed/tMEI38_mBBs?enablejsapi=1&autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      style="position:absolute; top:0; left:0; width:100%; height:100%; border-radius:8px;">
+    </iframe>
   </div>
 
   <div class="cta-wrapper">
@@ -325,8 +335,6 @@ Aqui tá a leitura.
       Acesso imediato. 14 dias pra testar na pele ou seu dinheiro de volta.
     </div>
 
-  </div>
-
   <div class="garantia">
     Código de Defesa do Consumidor garante 7 dias.<br><br>
     VMP te dá <strong>14 dias de garantia incondicional</strong>. Usou, não sentiu. Devolvo.
@@ -336,10 +344,6 @@ Aqui tá a leitura.
     Copyright 2026 – VMP<br>
     Todos os direitos reservados.
   </div>
-
-</div>
-</body>
-</html>
 
 </div> <!-- fecha container -->
 
@@ -359,7 +363,7 @@ function onYouTubeIframeAPIReady() {
 
 function iniciarMonitoramento() {
   setInterval(() => {
-    if (!player) return;
+    if (!player || typeof player.getCurrentTime !== 'function') return;
 
     const tempoAtual = player.getCurrentTime();
 
@@ -378,6 +382,20 @@ function iniciarMonitoramento() {
   }, 500);
 }
 
+/* AJUSTE 2: CLIQUE NA THUMB CARREGA O VÍDEO LIMPO */
+document.getElementById('vmp-thumb').addEventListener('click', function() {
+  const iframe = document.getElementById('vmp-video');
+  iframe.src = iframe.dataset.src;
+  this.style.display = 'none';
+  
+  setTimeout(() => {
+    if(player && typeof player.unMute === 'function'){
+      player.unMute();
+      player.playVideo();
+    }
+  }, 1000);
+});
+
 /* BOTÃO FINAL */
 const finalBtn = document.getElementById('finalBtn');
 
@@ -392,4 +410,4 @@ finalBtn.addEventListener('click', () => {
 </script>
 
 </body>
-</html>
+  </html>
