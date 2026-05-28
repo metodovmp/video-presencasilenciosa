@@ -21,24 +21,12 @@
     .container {
       width: 100%;
       max-width: 900px;
-      padding: 40px 20px;
+      padding: 40px 16px; /* era 20px, troquei pra 16px */
       text-align: center;
+      box-sizing: border-box;
     }
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 42px;
-      color: #d4af37;
-      margin-bottom: 10px;
-    }
-
-h2 {
-      font-size: 15px;
-      letter-spacing: 3px;
-      font-weight: 500;
-      margin-bottom: 20px;
-      opacity: 0.85;
-}
+    /* H1 e H2 global removido pra não conflitar com inline */
     
     .footer {
       font-size: 12px;
@@ -79,25 +67,17 @@ h2 {
       transition: all 0.3s ease;
     }
 
-    /* 🔹 CTA COMPACTO ESTRATÉGICO */
     .vmp-button-large{
       display:flex !important;
-
       justify-content:center;
       align-items:center;
-
       width:auto;
       max-width:unset;
-
       margin:0 auto;
-
       padding:16px 34px;
-
       font-size:15px;
       font-weight:500;
-
       letter-spacing:0.5px;
-
       box-sizing:border-box;
     }
 
@@ -158,6 +138,7 @@ h2 {
       font-size: 16px;
       color: #e0e0e0;
       line-height: 1.7;
+      padding: 0 4px;
     }
 
     .cta-final {
@@ -175,6 +156,7 @@ h2 {
       color: #ccc;
       margin-top: 40px;
       line-height: 1.7;
+      padding: 0 4px;
     }
 
     .garantia strong {
@@ -187,13 +169,13 @@ h2 {
       margin-top: 20px;
     }
 
-    /* 🔹 NOVO BLOCO BULLETS */
     .vsl-bullets {
       margin-top: 30px;
       text-align: left;
       max-width: 600px;
       margin-left: auto;
       margin-right: auto;
+      padding: 0 4px;
     }
 
     .vsl-bullets h3 {
@@ -202,11 +184,12 @@ h2 {
       font-weight: 600;
       margin-bottom: 12px;
       text-align: center;
+      padding: 0 4px;
     }
 
     .vsl-bullets ul {
       list-style: none;
-      padding: 0;
+      padding: 0 0 0 18px;
     }
 
     .vsl-bullets li {
@@ -228,16 +211,11 @@ h2 {
     }
 
     @media (max-width:600px){
-
       .vmp-button-large{
-
         width:88%;
-
         padding:15px 22px;
-
         font-size:14px;
       }
-
     }
 
   </style>
@@ -246,12 +224,12 @@ h2 {
 <body>
 <div class="container">
 
-<h1 style="color:#FFD700; font-size:28px; text-align:center; line-height:1.2;">
+<h1 style="color:#FFD700; font-size:28px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:10px; text-shadow:0 0 12px rgba(212,175,55,0.18);">
 Você foi escaneado em 3s.<br>
 Aqui tá a leitura.
 </h1>
 
-<h2 style="color:#fff; font-size:16px; text-align:center; font-weight:400; margin-top:8px;">
+<h2 style="color:#fff; font-size:16px; text-align:center; font-weight:400; margin-top:8px; margin-bottom:20px; padding:0 4px; line-height:1.4; letter-spacing:0; opacity:1;">
 4min. Dá play se quiser entender por que falam por cima de você.
 </h2>
   
@@ -260,11 +238,12 @@ Aqui tá a leitura.
   <div class="footer">Play obrigatório pra quem cansou de ser ignorado</div>
 
   <div class="video-wrapper">
-  <iframe
-    id="vmp-video"
-    src="https://www.youtube.com/embed/tMEI38_mBBs?rel=0&enablejsapi=1"
-    allowfullscreen>
-  </iframe>
+<iframe
+  id="vmp-video"
+  src="https://www.youtube.com/embed/tMEI38_mBBs?enablejsapi=1&rel=0&modestbranding=1&controls=1&disablekb=1&showinfo=0&fs=0&iv_load_policy=3"
+  frameborder="0"
+  allowfullscreen>
+</iframe>
   </div>
 
   <div class="cta-wrapper">
@@ -278,16 +257,13 @@ Aqui tá a leitura.
 
 <div class="vsl-bullets">
   <h3>O que muda quando o delay some:</h3>
-
   <ul>
     <li>
       Você entra e o ambiente registra. Sem forçar simpatia, sem mendigar atenção.
     </li>
-
     <li>
       Sua fala corta. Não porque gritou. Porque sustenta. Calma é autoridade.
     </li>
-
     <li>
       Param de te interromper no meio da frase. Presença não é volume. É peso.
     </li>
@@ -297,7 +273,7 @@ Aqui tá a leitura.
   <div class="spacer"></div>
 
   <h1>Método VMP</h1>
-  <h2>PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
+  <h2 style="font-size:15px; letter-spacing:3px; font-weight:500; margin-bottom:20px; opacity:0.85;">PRESENÇA · SILÊNCIO · AUTORIDADE</h2>
 
 <div class="img-container">
   <img src="img/img001.jpg" onerror="this.src='img/placeholder.png'">
@@ -362,6 +338,10 @@ Aqui tá a leitura.
   </div>
 
 </div>
+</body>
+</html>
+
+</div> <!-- fecha container -->
 
 <script src="https://www.youtube.com/iframe_api"></script>
 
@@ -383,40 +363,31 @@ function iniciarMonitoramento() {
 
     const tempoAtual = player.getCurrentTime();
 
-    // 🔹 4:01 → botão aparece
-if (tempoAtual >= 241 && !botaoLiberado) {
-  document.getElementById('vmp-button').style.display = 'inline-block';
-  document.getElementById('vmp-subtext').style.display = 'block';
-  botaoLiberado = true;
+    // 4:01 → botão aparece
+    if (tempoAtual >= 241 && !botaoLiberado) {
+      document.getElementById('vmp-button').style.display = 'inline-block';
+      document.getElementById('vmp-subtext').style.display = 'block';
+      botaoLiberado = true;
+    }
+
+    // 4:31 → botão começa pulsar
+    if (tempoAtual >= 271) {
+      document.getElementById('vmp-button').classList.add('pulse');
+    }
+
+  }, 500);
 }
 
-// 🔹 4:31 → botão começa pulsar
-if (tempoAtual >= 271) {
-  document.getElementById('vmp-button').classList.add('pulse');
-}
-
-}, 500);
-  }
-
-/* 🔹 LEITURA DO BOTÃO FINAL */
-
+/* BOTÃO FINAL */
 const finalBtn = document.getElementById('finalBtn');
 
 finalBtn.addEventListener('click', () => {
-
   finalBtn.innerText = "Realinhando presença…";
-
   finalBtn.style.opacity = "0.9";
-
   finalBtn.disabled = true;
-
   setTimeout(() => {
-
-    window.location.href =
-    "https://go.pepperpay.com.br/0jlkh";
-
+    window.location.href = "https://go.pepperpay.com.br/0jlkh";
   }, 1500);
-
 });
 </script>
 
