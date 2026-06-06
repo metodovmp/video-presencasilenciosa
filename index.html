@@ -21,12 +21,10 @@
     .container {
       width: 100%;
       max-width: 900px;
-      padding: 40px 16px; /* era 20px, troquei pra 16px */
+      padding: 40px 16px;
       text-align: center;
       box-sizing: border-box;
     }
-
-    /* H1 e H2 global removido pra não conflitar com inline */
     
     .footer {
       font-size: 12px;
@@ -51,62 +49,6 @@
       top: 0;
       left: 0;
       border: none;
-    }
-
-    .vmp-button {
-      display: none;
-      padding: 16px 32px;
-      background-color: #d4af37;
-      color: #000;
-      text-decoration: none;
-      border-radius: 999px;
-      margin-top: 20px;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .vmp-button-large{
-      display:flex !important;
-      justify-content:center;
-      align-items:center;
-      width:auto;
-      max-width:unset;
-      margin:0 auto;
-      padding:16px 34px;
-      font-size:15px;
-      font-weight:500;
-      letter-spacing:0.5px;
-      box-sizing:border-box;
-    }
-
-    .vmp-button:hover{
-      transform: translateY(-2px);
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0.6); }
-      70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(212,175,55,0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0); }
-    }
-
-    .vmp-button.pulse {
-      animation: pulse 1.5s infinite;
-    }
-
-    .cta-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    #vmp-subtext {
-      display: none;
-      color: #B0B0B0;
-      font-size: 13px;
-      margin-top: 6px;
     }
 
     .spacer {
@@ -139,16 +81,6 @@
       color: #e0e0e0;
       line-height: 1.7;
       padding: 0 4px;
-    }
-
-    .cta-final {
-      margin-top: 60px;
-    }
-
-    .cta-sub {
-      font-size: 13px;
-      color: #aaa;
-      margin-top: 6px;
     }
 
     .garantia {
@@ -210,14 +142,6 @@
       top: 0;
     }
 
-    @media (max-width:600px){
-      .vmp-button-large{
-        width:88%;
-        padding:15px 22px;
-        font-size:14px;
-      }
-    }
-
   </style>
 </head>
 
@@ -238,19 +162,7 @@ Aqui tá a leitura.
   <div class="footer">Play obrigatório pra quem cansou de ser ignorado</div>
 
   <div class="video-wrapper">
-<iframe
-  id="vmp-video"
-  src="https://www.youtube.com/embed/tMEI38_mBBs?enablejsapi=1&rel=0&modestbranding=1&controls=1&disablekb=1&showinfo=0&fs=0&iv_load_policy=3"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
-  </div>
-
-  <div class="cta-wrapper">
-    <a id="vmp-button" href="https://go.pepperpay.com.br/0jlkh" class="vmp-button">
-      CORRIGIR MEU DELAY SOCIAL
-    </a>
-    <div id="vmp-subtext">Acesso aos 7 Protocolos liberado</div>
+    <iframe id="panda-54cf5f8e-37ab-4eec-a18a-46f1e555d521" src="https://player-vz-80ebad0e-352.tv.pandavideo.com.br/embed/?v=54cf5f8e-37ab-4eec-a18a-46f1e555d521" style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="720" height="360" fetchpriority="high"></iframe>
   </div>
 
   <div class="spacer"></div>
@@ -312,21 +224,6 @@ Aqui tá a leitura.
 
 <div class="spacer"></div>
 
-  <div class="cta-final">
-
-    <button id="finalBtn"
-            class="vmp-button vmp-button-large">
-
-      CORRIGIR MEU DELAY SOCIAL AGORA
-
-    </button>
-
-    <div class="cta-sub">
-      Acesso imediato. 14 dias pra testar na pele ou seu dinheiro de volta.
-    </div>
-
-  </div>
-
   <div class="garantia">
     Código de Defesa do Consumidor garante 7 dias.<br><br>
     VMP te dá <strong>14 dias de garantia incondicional</strong>. Usou, não sentiu. Devolvo.
@@ -340,56 +237,3 @@ Aqui tá a leitura.
 </div>
 </body>
 </html>
-
-</div> <!-- fecha container -->
-
-<script src="https://www.youtube.com/iframe_api"></script>
-
-<script>
-let player;
-let botaoLiberado = false;
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('vmp-video', {
-    events: {
-      'onReady': iniciarMonitoramento
-    }
-  });
-}
-
-function iniciarMonitoramento() {
-  setInterval(() => {
-    if (!player) return;
-
-    const tempoAtual = player.getCurrentTime();
-
-    // 4:01 → botão aparece
-    if (tempoAtual >= 241 && !botaoLiberado) {
-      document.getElementById('vmp-button').style.display = 'inline-block';
-      document.getElementById('vmp-subtext').style.display = 'block';
-      botaoLiberado = true;
-    }
-
-    // 4:31 → botão começa pulsar
-    if (tempoAtual >= 271) {
-      document.getElementById('vmp-button').classList.add('pulse');
-    }
-
-  }, 500);
-}
-
-/* BOTÃO FINAL */
-const finalBtn = document.getElementById('finalBtn');
-
-finalBtn.addEventListener('click', () => {
-  finalBtn.innerText = "Realinhando presença…";
-  finalBtn.style.opacity = "0.9";
-  finalBtn.disabled = true;
-  setTimeout(() => {
-    window.location.href = "https://go.pepperpay.com.br/0jlkh";
-  }, 1500);
-});
-</script>
-
-</body>
-  </html>
