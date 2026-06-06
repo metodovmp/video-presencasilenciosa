@@ -60,25 +60,39 @@
       border-radius: 999px;
       margin-top: 20px;
       font-weight: 600;
-      font-size: 15px;
-      letter-spacing: 0.5px;
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .vmp-button-large{
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      max-width: unset;
+      margin: 0 auto;
+      padding: 16px 34px;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      box-sizing: border-box;
     }
 
     .vmp-button:hover{
       transform: translateY(-2px);
     }
 
-    .cta-wrapper {
-      margin-top: 20px;
+    .cta-final {
+      margin-top: 60px;
     }
 
     .cta-sub {
       font-size: 13px;
       color: #aaa;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
     .spacer {
@@ -173,10 +187,10 @@
     }
 
     @media (max-width:600px){
-      .vmp-button{
-        width:88%;
-        padding:15px 22px;
-        font-size:14px;
+      .vmp-button-large{
+        width: 88%;
+        padding: 15px 22px;
+        font-size: 14px;
       }
     }
 
@@ -201,15 +215,6 @@ Aqui tá a leitura.
 
   <div class="video-wrapper">
     <iframe id="panda-54cf5f8e-37ab-4eec-a18a-46f1e555d521" src="https://player-vz-80ebad0e-352.tv.pandavideo.com.br/embed/?v=54cf5f8e-37ab-4eec-a18a-46f1e555d521" style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="720" height="360" fetchpriority="high"></iframe>
-  </div>
-
-  <div class="cta-wrapper">
-    <a href="https://go.pepperpay.com.br/0jlkh" class="vmp-button">
-      CORRIGIR MEU DELAY SOCIAL AGORA
-    </a>
-    <div class="cta-sub">
-      Acesso imediato. 14 dias pra testar na pele ou seu dinheiro de volta.
-    </div>
   </div>
 
   <div class="spacer"></div>
@@ -270,6 +275,15 @@ Aqui tá a leitura.
 </div>
 
 <div class="spacer"></div>
+
+  <div class="cta-final">
+    <a href="https://go.pepperpay.com.br/0jlkh" class="vmp-button vmp-button-large">
+      CORRIGIR MEU DELAY SOCIAL AGORA
+    </a>
+    <div class="cta-sub">
+      Acesso imediato. 14 dias pra testar na pele ou seu dinheiro de volta.
+    </div>
+  </div>
 
   <div class="garantia">
     Código de Defesa do Consumidor garante 7 dias.<br><br>
