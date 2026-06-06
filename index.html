@@ -51,6 +51,36 @@
       border: none;
     }
 
+    .vmp-button {
+      display: inline-block;
+      padding: 16px 32px;
+      background-color: #d4af37;
+      color: #000;
+      text-decoration: none;
+      border-radius: 999px;
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .vmp-button:hover{
+      transform: translateY(-2px);
+    }
+
+    .cta-wrapper {
+      margin-top: 20px;
+    }
+
+    .cta-sub {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 8px;
+    }
+
     .spacer {
       height: 60px;
     }
@@ -142,6 +172,14 @@
       top: 0;
     }
 
+    @media (max-width:600px){
+      .vmp-button{
+        width:88%;
+        padding:15px 22px;
+        font-size:14px;
+      }
+    }
+
   </style>
 </head>
 
@@ -163,6 +201,15 @@ Aqui tá a leitura.
 
   <div class="video-wrapper">
     <iframe id="panda-54cf5f8e-37ab-4eec-a18a-46f1e555d521" src="https://player-vz-80ebad0e-352.tv.pandavideo.com.br/embed/?v=54cf5f8e-37ab-4eec-a18a-46f1e555d521" style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="720" height="360" fetchpriority="high"></iframe>
+  </div>
+
+  <div class="cta-wrapper">
+    <a href="https://go.pepperpay.com.br/0jlkh" class="vmp-button">
+      CORRIGIR MEU DELAY SOCIAL AGORA
+    </a>
+    <div class="cta-sub">
+      Acesso imediato. 14 dias pra testar na pele ou seu dinheiro de volta.
+    </div>
   </div>
 
   <div class="spacer"></div>
