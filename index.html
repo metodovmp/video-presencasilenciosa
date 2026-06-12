@@ -65,18 +65,20 @@
 
 .vmp-button {
       display: inline-block;
-      padding: 16px 32px;
+      padding: 18px 40px;
       background-color: #d4af37;
       color: #000;
       text-decoration: none;
       border-radius: 999px;
       margin-top: 20px;
-      font-weight: 600;
+      font-weight: 700;
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 15px;
+      font-size: 16px;
       letter-spacing: 0.5px;
+      min-height: 54px;
+      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
     }
 
 .vmp-button-large{
@@ -84,17 +86,23 @@
       justify-content: center;
       align-items: center;
       width: auto;
-      max-width: unset;
+      max-width: 100%;
       margin: 0 auto;
-      padding: 16px 34px;
-      font-size: 15px;
-      font-weight: 500;
+      padding: 18px 40px;
+      font-size: 16px;
+      font-weight: 700;
       letter-spacing: 0.5px;
       box-sizing: border-box;
+      min-height: 54px;
     }
 
 .vmp-button:hover{
       transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+    }
+
+.vmp-button:active{
+      transform: translateY(0px);
     }
 
 .cta-final {
@@ -104,7 +112,8 @@
 .cta-sub {
       font-size: 13px;
       color: #aaa;
-      margin-top: 6px;
+      margin-top: 12px;
+      line-height: 1.5;
     }
 
 .spacer {
@@ -159,9 +168,9 @@
 
     @media (max-width:600px){
 .vmp-button-large{
-        width: 88%;
-        padding: 15px 22px;
-        font-size: 14px;
+        width: 92%;
+        padding: 18px 24px;
+        font-size: 15px;
       }
     }
 
@@ -204,11 +213,11 @@ Aqui tá a leitura.
     POSTURA
   </h1>
 
-<!--  IMG  -->
+<!-- IMG -->
 <div class="img-container">
   <img src="img/img003.png" onerror="this.src='img/placeholder.png'">
 </div>
-  
+
   <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
     Seu corpo fala antes da boca.<br>
     Fraco pede licença.<br>
@@ -222,11 +231,11 @@ Aqui tá a leitura.
     OLHAR
   </h1>
 
-<!--  IMG  -->
+<!-- IMG -->
 <div class="img-container">
   <img src="img/img004.png" onerror="this.src='img/placeholder.png'">
 </div>
-  
+
   <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
     Olho não mente.<br>
     Inseguro desvia.<br>
@@ -240,11 +249,11 @@ Aqui tá a leitura.
     ENERGIA
   </h1>
 
-  <!--  IMG  -->
+  <!-- IMG -->
 <div class="img-container">
   <img src="img/img005.png" onerror="this.src='img/placeholder.png'">
 </div>
-  
+
   <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
     Sentem antes de entender.<br>
     Presença não pede. Impõe.<br>
