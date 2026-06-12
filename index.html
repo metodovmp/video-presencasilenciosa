@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Método VMP</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- TikTok Pixel Code Start -->
   <script>
@@ -64,36 +64,36 @@
     }
 
 .vmp-button {
-      display: inline-block;
-      padding: 18px 40px;
+      display: inline-flex;
+      padding: 14px 22px;
       background-color: #d4af37;
       color: #000;
       text-decoration: none;
       border-radius: 999px;
       margin-top: 20px;
-      font-weight: 700;
+      font-weight: 500;
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 16px;
+      font-size: 15px;
       letter-spacing: 0.5px;
-      min-height: 54px;
+      line-height: 1;
       box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+      white-space: nowrap;
     }
 
 .vmp-button-large{
-      display: flex!important;
+      display: inline-flex!important;
       justify-content: center;
       align-items: center;
       width: auto;
-      max-width: 100%;
       margin: 0 auto;
-      padding: 18px 40px;
-      font-size: 16px;
-      font-weight: 700;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: 500;
       letter-spacing: 0.5px;
       box-sizing: border-box;
-      min-height: 54px;
+      white-space: nowrap;
     }
 
 .vmp-button:hover{
@@ -107,6 +107,7 @@
 
 .cta-final {
       margin-top: 60px;
+      text-align: center;
     }
 
 .cta-sub {
@@ -167,10 +168,10 @@
     }
 
     @media (max-width:600px){
-.vmp-button-large{
-        width: 92%;
-        padding: 18px 24px;
-        font-size: 15px;
+     .vmp-button,.vmp-button-large{
+        padding: 13px 20px;
+        font-size: 14px;
+        max-width: 90%;
       }
     }
 
