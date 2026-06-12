@@ -15,6 +15,14 @@
 
     ttq.load('D8IBJHRC77UDG683N2CG');
     ttq.page();
+
+    ttq.track('ViewContent', {
+      content_id: 'vmp-vsl',
+      content_name: 'VSL Vida Magnética',
+      content_type: 'product',
+      value: 67.00,
+      currency: 'BRL'
+    });
   }(window, document, 'ttq');
   </script>
   <!-- TikTok Pixel Code End -->
@@ -167,8 +175,7 @@
       margin-top: 20px;
     }
 
-    /* CONTAINER DOS CARDS - ESSE QUE FALTOU */
-   .cards-wrapper {
+  .cards-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -177,12 +184,12 @@
     }
 
     @media (max-width:600px){
-   .vmp-button,.vmp-button-large{
+  .vmp-button,.vmp-button-large{
         padding: 13px 20px;
         font-size: 14px;
         max-width: 90%;
       }
-   .cards-wrapper {
+  .cards-wrapper {
         flex-direction: column;
         align-items: center;
       }
@@ -218,7 +225,6 @@ Aqui tá a leitura
     </h3>
   </div>
 
-  <!-- INÍCIO DO WRAPPER DOS CARDS - ISSO AQUI TAVA FALTANDO -->
   <div class="cards-wrapper">
 
     <!-- POSTURA -->
@@ -272,13 +278,10 @@ Aqui tá a leitura
       </div>
     </div>
 
-  </div>
-  <!-- FIM DO WRAPPER DOS CARDS -->
-
   <div class="cta-final">
     <a href="https://pay.cakto.com.br/v8qz43t_899652"
        class="vmp-button vmp-button-large"
-       onclick="ttq.track('InitiateCheckout', {value: 87, currency: 'USD', content_id: 'vmp-delay-social', content_type: 'product'})">
+       onclick="ttq.track('InitiateCheckout', {value: 67.00, currency: 'BRL', content_id: 'vmp-delay-social', content_type: 'product'})">
       CORRIGIR MEU DELAY SOCIAL AGORA
     </a>
     <div class="cta-sub">
@@ -298,4 +301,4 @@ Aqui tá a leitura
 
 </div>
 </body>
-</html>
+  </html>
