@@ -167,11 +167,24 @@
       margin-top: 20px;
     }
 
+    /* CONTAINER DOS CARDS - ESSE QUE FALTOU */
+   .cards-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 30px;
+    }
+
     @media (max-width:600px){
-    .vmp-button,.vmp-button-large{
+   .vmp-button,.vmp-button-large{
         padding: 13px 20px;
         font-size: 14px;
         max-width: 90%;
+      }
+   .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
       }
     }
 
@@ -205,60 +218,62 @@ Aqui tá a leitura
     </h3>
   </div>
 
-  <div style="flex:1; min-width:260px; max-width:280px;">
-  <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
-    POSTURA
-  </h1>
+  <!-- INÍCIO DO WRAPPER DOS CARDS - ISSO AQUI TAVA FALTANDO -->
+  <div class="cards-wrapper">
 
-<!-- IMG -->
-<div class="img-container">
-  <img src="img/img003.png" onerror="this.src='img/placeholder.png'">
-</div>
+    <!-- POSTURA -->
+    <div style="flex:1; min-width:260px; max-width:280px;">
+      <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
+        POSTURA
+      </h1>
 
-  <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
-    Seu corpo fala antes da boca<br>
-    Fraco pede licença<br>
-    Forte ocupa espaço.
+      <div class="img-container">
+        <img src="img/img003.png" onerror="this.src='img/placeholder.png'">
+      </div>
+
+      <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
+        Seu corpo fala antes da boca<br>
+        Fraco pede licença<br>
+        Forte ocupa espaço.
+      </div>
+    </div>
+
+    <!-- OLHAR -->
+    <div style="flex:1; min-width:260px; max-width:280px;">
+      <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
+        OLHAR
+      </h1>
+
+      <div class="img-container">
+        <img src="img/img004.png" onerror="this.src='img/placeholder.png'">
+      </div>
+
+      <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
+        Olho não mente<br>
+        Inseguro desvia<br>
+        Dominante sustenta.
+      </div>
+    </div>
+
+    <!-- ENERGIA -->
+    <div style="flex:1; min-width:260px; max-width:280px;">
+      <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
+        ENERGIA
+      </h1>
+
+      <div class="img-container">
+        <img src="img/img005.png" onerror="this.src='img/placeholder.png'">
+      </div>
+
+      <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
+        Energia vaza ou atrai<br>
+        Ansioso repele<br>
+        Centrado magnetiza.
+      </div>
+    </div>
+
   </div>
-</div>
-
-<!-- OLHAR -->
-<div style="flex:1; min-width:260px; max-width:280px;">
-  <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
-    OLHAR
-  </h1>
-
-<!-- IMG -->
-<div class="img-container">
-  <img src="img/img004.png" onerror="this.src='img/placeholder.png'">
-</div>
-
-  <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
-    Olho não mente<br>
-    Inseguro desvia<br>
-    Dominante sustenta.
-  </div>
-</div>
-
-<!-- ENERGIA -->
-<div style="flex:1; min-width:260px; max-width:280px;">
-  <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
-    ENERGIA
-  </h1>
-
-  <!-- IMG -->
-<div class="img-container">
-  <img src="img/img005.png" onerror="this.src='img/placeholder.png'">
-</div>
-
-  <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
-    Energia vaza ou atrai<br>
-    Ansioso repele<br>
-    Centrado magnetiza.
-  </div>
-</div>
-
-  </div>
+  <!-- FIM DO WRAPPER DOS CARDS -->
 
   <div class="cta-final">
     <a href="https://pay.cakto.com.br/v8qz43t_899652"
