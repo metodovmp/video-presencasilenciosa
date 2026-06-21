@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+      <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -7,25 +7,30 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- TikTok Pixel Code Start -->
+  <!-- Meta Pixel Code -->
   <script>
-!function (w, d, t) {
-    w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-  var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._i[e]._partner=o||"tiktok",ttq._i[e]._tt=ttq.instance(e),ttq.load=function(e){var n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(n,i)}};
-
-    ttq.load('D8IBJHRC77UDG683N2CG');
-    ttq.page();
-
-    ttq.track('ViewContent', {
-      content_id: 'vmp-vsl',
-      content_name: 'VSL Vida Magnética',
-      content_type: 'product',
-      value: 67.00,
-      currency: 'BRL'
-    });
-  }(window, document, 'ttq');
+ !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1005684288934295');
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', {
+    content_name: 'VSL Vida Magnética',
+    content_ids: ['vmp-vsl'],
+    content_type: 'product',
+    value: 67.00,
+    currency: 'BRL'
+  });
   </script>
-  <!-- TikTok Pixel Code End -->
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1005684288934295&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
   <style>
     body {
@@ -175,7 +180,7 @@
       margin-top: 20px;
     }
 
-  .cards-wrapper {
+ .cards-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -184,12 +189,12 @@
     }
 
     @media (max-width:600px){
-  .vmp-button,.vmp-button-large{
+ .vmp-button,.vmp-button-large{
         padding: 13px 20px;
         font-size: 14px;
         max-width: 90%;
       }
-  .cards-wrapper {
+ .cards-wrapper {
         flex-direction: column;
         align-items: center;
       }
@@ -278,10 +283,12 @@ Aqui tá a leitura
       </div>
     </div>
 
+  </div>
+
   <div class="cta-final">
     <a href="https://pay.cakto.com.br/v8qz43t_899652"
        class="vmp-button vmp-button-large"
-       onclick="ttq.track('InitiateCheckout', {value: 67.00, currency: 'BRL', content_id: 'vmp-delay-social', content_type: 'product'})">
+       onclick="fbq('track', 'InitiateCheckout', {value: 67.00, currency: 'BRL', content_ids: ['vmp-delay-social'], content_name: 'VMP Delay Social', content_type: 'product'});">
       CORRIGIR MEU DELAY SOCIAL AGORA
     </a>
     <div class="cta-sub">
@@ -301,4 +308,4 @@ Aqui tá a leitura
 
 </div>
 </body>
-</html>
+        </html>
