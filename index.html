@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VMP - Sistema de Realinhamento</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -44,7 +44,7 @@
       flex-direction: column;
     }
 
-  .bainer-topo {
+ .bainer-topo {
       background:#ff0000;
       color:#fff;
       text-align:center;
@@ -55,43 +55,47 @@
       letter-spacing:0.5px;
     }
 
-  .container {
+ .container {
       width: 100%;
-      max-width: 500px;
-      padding: 40px 20px;
+      max-width: 900px; /* TELA LARGA 16:9 */
+      padding: 40px 16px;
       text-align: center;
       box-sizing: border-box;
       margin: 0 auto;
     }
 
-  .cabecalho {
-      color:#FFD700;
-      font-size:12px;
+  /* DOURADO METÁLICO */
+ .dourado-metal {
+      background: linear-gradient(180deg, #FFD700 0%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.25));
+    }
+
+ .cabecalho {
+      font-size:13px;
       letter-spacing:2px;
-      font-weight:600;
+      font-weight:700; /* + GROSSO */
       text-align:center;
-      margin:0 0 20px 0;
+      margin:0 0 24px 0;
       text-transform:uppercase;
+      color: #999; /* CINZA */
     }
 
-  .video-box {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 28px;
-    }
-
-  .video-wrapper {
+  /* VIDEO SEM BORDA E SEM CAIXA */
+ .video-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%;
+      padding-bottom: 56.25%; /* 16:9 NORMAL */
       overflow: hidden;
-      border-radius: 6px;
+      border-radius: 0; /* SEM BORDA */
       background: #000;
+      margin-bottom: 32px;
     }
 
-  .video-wrapper iframe {
+ .video-wrapper iframe {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -100,56 +104,26 @@
       border: none;
     }
 
-  .vmp-button {
+ .vmp-button {
       display: block;
       width: 70%;
-      max-width: 260px;
-      padding: 14px 20px;
-      background: #FFD700;
+      max-width: 320px;
+      padding: 16px 20px;
+      background: linear-gradient(180deg, #FFD700 0%, #DAA520 100%);
       color: #000;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 15px;
+      font-weight: 800;
+      font-size: 16px;
       border-radius: 999px;
       margin: 0 auto 24px;
       text-transform: uppercase;
+      box-shadow: 0 4px 20px rgba(218, 165, 32, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
       transition: all 0.3s ease;
     }
 
-  .vmp-button:hover{
+ .vmp-button:hover{
       transform: translateY(-2px);
-      background: #e6c44d;
-    }
-
-  .cta-sub {
-      font-size: 13px;
-      color: #aaa;
-      margin-top: 12px;
-      line-height: 1.5;
-    }
-
-  .garantia {
-      font-size: 13px;
-      color: #999;
-      margin-top: 40px;
-      line-height: 1.7;
-    }
-
-  .garantia strong {
-      color: #FFD700;
-    }
-
-  .footer-final {
-      font-size: 11px;
-      color: #444;
-      margin-top: 40px;
-      padding-top: 30px;
-      border-top:1px solid #111;
-    }
-
-    @media (max-width:600px){
-    .vmp-button { width: 90%; }
-      h1 { font-size: 24px!important; }
+      box-shadow: 0 6px 25px rgba(218, 165, 32, 0.7), inset 0 1px 0 rgba(255,255,255,0.5);
     }
 
   </style>
@@ -164,62 +138,57 @@
 
 <div class="container">
 
-<!-- 2. CABEÇALHO -->
+<!-- 2. CABEÇALHO CINZA + GROSSO -->
 <div class="cabecalho">
 ● VMP - SISTEMA DE REALINHAMENTO
 </div>
 
-<!-- 3. TITULO DOURADO CURTO IGUAL UPSELL -->
-<h1 style="color:#FFD700; font-size:24px; text-align:center; line-height:1.2; font-weight:700; margin:0 0 8px 0; letter-spacing:1px;">
-NADA DÁ ERRADO. <br>
-NADA MUDA.
+<!-- 3. TITULO DOURADO METÁLICO + GROSSO + MAIOR -->
+<h1 style="font-size:34px; text-align:center; line-height:1.15; font-weight:800; margin:0 0 12px 0;" class="dourado-metal">
+NADA DÁ ERRADO <br>
+MAS, NADA MUDA
 </h1>
 
-<!-- 4. SUBTITULO DIRETO -->
-<p style="color:#EAEAEA; font-size:14px; text-align:center; line-height:1.6; margin:0 0 24px 0; opacity:0.9;">
-Aqui tá a leitura que faltava.
+<!-- 4. SUBTITULO BRANCO + GROSSO -->
+<p style="color:#FFFFFF; font-size:15px; text-align:center; line-height:1.6; margin:0 0 28px 0; font-weight:600;">
+Aqui tá a leitura que faltava
 </p>
 
-<!-- 5. CAIXA DO VIDEO IGUAL DA UPSELL -->
-<div class="video-box">
-  <div style="color:#888; font-size:12px; text-align:center; margin-bottom:12px;">
-    Play obrigatório pra quem cansou de ser ignorado
-  </div>
-  <div class="video-wrapper">
-    <iframe id="panda-54cf5f8e-37ab-4eec-a18a-46f1e555d521" src="https://player-vz-80ebad0e-352.tv.pandavideo.com.br/embed/?v=54cf5f8e-37ab-4eec-a18a-46f1e555d521" style="border:none;" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen=true></iframe>
-  </div>
+<!-- 5. TELA VIDEO 16:9 NORMAL SEM BORDA -->
+<div class="video-wrapper">
+  <iframe id="panda-54cf5f8e-37ab-4eec-a18a-46f1e555d521" src="https://player-vz-80ebad0e-352.tv.pandavideo.com.br/embed/?v=54cf5f8e-37ab-4eec-a18a-46f1e555d521" style="border:none;" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen=true></iframe>
 </div>
 
 <!-- 6. BLOCO DOR -->
-<div style="text-align:center; margin:32px 0; padding:0 8px;">
-  <h3 style="color:#999; font-size:13px; letter-spacing:2px; font-weight:600; margin-bottom:16px;">VOCÊ SE RECONHECE AQUI?</h3>
-  <p style="color:#EAEAEA; font-size:15px; line-height:1.7; margin:0;">
+<div style="text-align:center; margin:32px 0;">
+  <h3 style="color:#999; font-size:14px; letter-spacing:2px; font-weight:700; margin-bottom:16px;">VOCÊ SE RECONHECE AQUI?</h3>
+  <p style="color:#EAEAEA; font-size:16px; line-height:1.7; margin:0; font-weight:500;">
     Fala e ninguém ouve. <br>
     Entra e ninguém nota. <br>
     Tenta falar e cortam você. <br><br>
-    <strong style="color:#FFD700;">Não é falta de conteúdo. É falta de presença.</strong>
+    <span class="dourado-metal" style="font-weight:700;">Não é falta de conteúdo. É falta de presença.</span>
   </p>
 </div>
 
-<!-- 7. BOTAO PRO CEKOUT IGUAL UPSELL -->
+<!-- 7. BOTAO -->
 <a href="https://pay.cakto.com.br/v8qz43t_899652"
    class="vmp-button"
    onclick="fbq('track', 'InitiateCheckout', {value: 67.00, currency: 'BRL', content_ids: ['vmp-realinhamento'], content_name: 'VMP Realinhamento', content_type: 'product'});">
    QUERO ME REALINHAR AGORA
 </a>
 
-<div class="cta-sub">
+<div style="font-size:13px; color:#aaa; margin-top:12px; font-weight:500;">
   Acesso imediato. 14 dias pra testar ou seu dinheiro de volta.
 </div>
 
 <!-- 8. GARANTIA -->
-<div class="garantia">
+<div style="font-size:13px; color:#999; margin-top:40px; line-height:1.7; font-weight:500;">
   Código de Defesa do Consumidor garante 7 dias.<br><br>
-  VMP te dá <strong>14 dias de garantia incondicional</strong>. Usou, não sentiu. Devolvo.
+  VMP te dá <span class="dourado-metal" style="font-weight:700;">14 dias de garantia incondicional</span>. Usou, não sentiu. Devolvo.
 </div>
 
 <!-- 9. RODAPÉ 2026 -->
-<div class="footer-final">
+<div style="font-size:11px; color:#444; margin-top:40px; padding-top:30px; border-top:1px solid #111; font-weight:400;">
   VMP - Sistema de Realinhamento © 2026. Todos os direitos reservados. <br>
   Este produto não garante resultados. Qualquer resultado depende da aplicação individual.
 </div>
