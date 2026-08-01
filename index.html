@@ -110,10 +110,9 @@
     }
 
 .vmp-button {
-      display: block;
-      width: 70%;
-      max-width: 320px;
-      padding: 16px 20px;
+      display: inline-block; /* MUDEI: não estica mais */
+      width: auto; /* MUDEI: abraça o texto */
+      padding: 18px 48px; /* MUDEI: mais lateral, menos altura */
       background: linear-gradient(180deg, #FFD700 0%, #DAA520 100%);
       color: #000;
       text-decoration: none;
@@ -122,6 +121,7 @@
       border-radius: 999px;
       margin: 0 auto 24px;
       text-transform: uppercase;
+      letter-spacing: 1px; /* MUDEI: mais autoridade */
       box-shadow: 0 4px 20px rgba(218, 165, 32, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
       transition: all 0.3s ease;
     }
@@ -165,7 +165,7 @@ Play obrigatório pra quem cansou de ser ignorado
 
 <div style="text-align:center; margin:32px 0;">
   <h3 style="color:#888; font-size:14px; letter-spacing:2px; font-weight:700; margin-bottom:16px; text-transform:uppercase;">VOCÊ SE RECONHECE AQUI?</h3>
-  <p style="color:#777; font-size:15px; line-height:1.7; margin:0 0 16px 0; font-weight:500;"> <!-- CORRIGIDO: #777 e 15px -->
+  <p style="color:#777; font-size:15px; line-height:1.7; margin:0 0 16px 0; font-weight:500;">
     Tenha acesso a um material único, e faça sua presença funcionar.
   </p>
 </div>
@@ -176,7 +176,7 @@ Play obrigatório pra quem cansou de ser ignorado
    CORRIGIR AGORA
 </a>
 
-<div style="font-size:13px; color:#999; margin-top:40px; line-height:1.7; font-weight:500;"> <!-- TIREI A GARANTIA DUPLICADA -->
+<div style="font-size:13px; color:#999; margin-top:40px; line-height:1.7; font-weight:500;">
   Código de Defesa do Consumidor garante 7 dias.<br><br>
   VMP te dá <span class="dourado-metal" style="font-weight:700;">14 dias de garantia incondicional</span>. Usou, não sentiu. Devolvo.
 </div>
