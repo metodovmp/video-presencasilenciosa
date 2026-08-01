@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Método VMP</title>
+  <title>VMP - Sistema de Realinhamento</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Meta Pixel Code -->
   <script>
- !function(f,b,e,v,n,t,s)
+!function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
@@ -20,8 +20,8 @@
   fbq('init', '1005684288934295');
   fbq('track', 'PageView');
   fbq('track', 'ViewContent', {
-    content_name: 'VSL Vida Magnética',
-    content_ids: ['vmp-vsl'],
+    content_name: 'VMP Sistema de Realinhamento',
+    content_ids: ['vmp-realinhamento'],
     content_type: 'product',
     value: 67.00,
     currency: 'BRL'
@@ -36,38 +36,62 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #0b0b0b;
+      background-color: #000;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
       display: flex;
       justify-content: center;
+      flex-direction: column;
     }
 
-.container {
+  .bainer-topo {
+      background:#ff0000;
+      color:#fff;
+      text-align:center;
+      padding:10px;
+      font-weight:700;
+      font-size:13px;
       width: 100%;
-      max-width: 900px;
-      padding: 40px 16px;
+      letter-spacing:0.5px;
+    }
+
+  .container {
+      width: 100%;
+      max-width: 500px;
+      padding: 40px 20px;
       text-align: center;
       box-sizing: border-box;
+      margin: 0 auto;
     }
 
-.footer {
-      font-size: 12px;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 10px;
-      letter-spacing: 1px;
+  .cabecalho {
+      color:#FFD700;
+      font-size:12px;
+      letter-spacing:2px;
+      font-weight:600;
+      text-align:center;
+      margin:0 0 20px 0;
+      text-transform:uppercase;
     }
 
-.video-wrapper {
+  .video-box {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+
+  .video-wrapper {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 6px;
       background: #000;
     }
 
-.video-wrapper iframe {
+  .video-wrapper iframe {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -76,240 +100,130 @@
       border: none;
     }
 
-.vmp-button {
-      display: inline-flex;
-      padding: 14px 22px;
-      background-color: #d4af37;
+  .vmp-button {
+      display: block;
+      width: 70%;
+      max-width: 260px;
+      padding: 14px 20px;
+      background: #FFD700;
       color: #000;
       text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
       border-radius: 999px;
-      margin-top: 20px;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
+      margin: 0 auto 24px;
+      text-transform: uppercase;
       transition: all 0.3s ease;
-      font-size: 15px;
-      letter-spacing: 0.5px;
-      line-height: 1;
-      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
-      white-space: nowrap;
     }
 
-.vmp-button-large{
-      display: inline-flex!important;
-      justify-content: center;
-      align-items: center;
-      width: auto;
-      margin: 0 auto;
-      padding: 14px 22px;
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      box-sizing: border-box;
-      white-space: nowrap;
-    }
-
-.vmp-button:hover{
+  .vmp-button:hover{
       transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+      background: #e6c44d;
     }
 
-.vmp-button:active{
-      transform: translateY(0px);
-    }
-
-.cta-final {
-      margin-top: 60px;
-      text-align: center;
-    }
-
-.cta-sub {
+  .cta-sub {
       font-size: 13px;
       color: #aaa;
       margin-top: 12px;
       line-height: 1.5;
     }
 
-.spacer {
-      height: 60px;
-    }
-
-.img-container {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: #111;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-.img-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-.subtitulo {
-      color: #d4af37;
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      margin: 20px 0 10px;
-    }
-
-.texto-curto {
-      font-size: 16px;
-      color: #e0e0e0;
-      line-height: 1.7;
-      padding: 0 4px;
-    }
-
-.garantia {
-      font-size: 14px;
-      color: #ccc;
+  .garantia {
+      font-size: 13px;
+      color: #999;
       margin-top: 40px;
       line-height: 1.7;
-      padding: 0 4px;
     }
 
-.garantia strong {
-      color: #d4af37;
+  .garantia strong {
+      color: #FFD700;
     }
 
-.footer-final {
-      font-size: 12px;
-      color: #777;
-      margin-top: 20px;
-    }
-
- .cards-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 30px;
+  .footer-final {
+      font-size: 11px;
+      color: #444;
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top:1px solid #111;
     }
 
     @media (max-width:600px){
- .vmp-button,.vmp-button-large{
-        padding: 13px 20px;
-        font-size: 14px;
-        max-width: 90%;
-      }
- .cards-wrapper {
-        flex-direction: column;
-        align-items: center;
-      }
+    .vmp-button { width: 90%; }
+      h1 { font-size: 24px!important; }
     }
 
   </style>
 </head>
 
 <body>
+
+<!-- 1. BAINER VERMELHO -->
+<div class="bainer-topo">
+⚠️ OFERTA DE LANÇAMENTO: R$67 ATÉ HOJE 23:59
+</div>
+
 <div class="container">
 
-<h1 style="color:#FFD700; font-size:28px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:10px; text-shadow:0 0 12px rgba(212,175,55,0.18);">
-  Nada dá errado.<br>
-  Mas... nada acontece.<br>
+<!-- 2. CABEÇALHO -->
+<div class="cabecalho">
+● VMP - SISTEMA DE REALINHAMENTO
+</div>
 
-<div class="spacer"></div>
-  
-  <span style="color:#fff;">Aqui tá a leitura</span>
+<!-- 3. TITULO DOURADO CURTO IGUAL UPSELL -->
+<h1 style="color:#FFD700; font-size:24px; text-align:center; line-height:1.2; font-weight:700; margin:0 0 8px 0; letter-spacing:1px;">
+NADA DÁ ERRADO. <br>
+NADA MUDA.
 </h1>
 
-<h2 style="color:#fff; font-size:16px; text-align:center; font-weight:400; margin-top:8px; margin-bottom:20px; padding:0 4px; line-height:1.4; letter-spacing:0; opacity:1;">
-4min. Dá play se quiser entender por que falam por cima de você</h2>
+<!-- 4. SUBTITULO DIRETO -->
+<p style="color:#EAEAEA; font-size:14px; text-align:center; line-height:1.6; margin:0 0 24px 0; opacity:0.9;">
+Aqui tá a leitura que faltava.
+</p>
 
-<div style="height:12px;"></div>
-
-  <div class="footer">Play obrigatório pra quem cansou de ser ignorado</div>
-
+<!-- 5. CAIXA DO VIDEO IGUAL DA UPSELL -->
+<div class="video-box">
+  <div style="color:#888; font-size:12px; text-align:center; margin-bottom:12px;">
+    Play obrigatório pra quem cansou de ser ignorado
+  </div>
   <div class="video-wrapper">
-    <iframe id="panda-54cf5f8e-37ab-4eec-a18a-46f1e555d521" src="https://player-vz-80ebad0e-352.tv.pandavideo.com.br/embed/?v=54cf5f8e-37ab-4eec-a18a-46f1e555d521" style="border:none;" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture" allowfullscreen=true width="720" height="360" fetchpriority="high"></iframe>
+    <iframe id="panda-54cf5f8e-37ab-4eec-a18a-46f1e555d521" src="https://player-vz-80ebad0e-352.tv.pandavideo.com.br/embed/?v=54cf5f8e-37ab-4eec-a18a-46f1e555d521" style="border:none;" allow="autoplay;encrypted-media;picture-in-picture" allowfullscreen=true></iframe>
   </div>
+</div>
 
-  <div class="spacer"></div>
+<!-- 6. BLOCO DOR -->
+<div style="text-align:center; margin:32px 0; padding:0 8px;">
+  <h3 style="color:#999; font-size:13px; letter-spacing:2px; font-weight:600; margin-bottom:16px;">VOCÊ SE RECONHECE AQUI?</h3>
+  <p style="color:#EAEAEA; font-size:15px; line-height:1.7; margin:0;">
+    Fala e ninguém ouve. <br>
+    Entra e ninguém nota. <br>
+    Tenta falar e cortam você. <br><br>
+    <strong style="color:#FFD700;">Não é falta de conteúdo. É falta de presença.</strong>
+  </p>
+</div>
 
-  <div style="text-align:center; margin:40px 0 24px;">
-    <h3 style="color:#999; font-size:14px; font-weight:600; letter-spacing:2px; text-transform:uppercase;">
-      VOCÊ SE RECONHECE AQUI?
-    </h3>
-  </div>
- 
-<div class="cards-wrapper">
+<!-- 7. BOTAO PRO CEKOUT IGUAL UPSELL -->
+<a href="https://pay.cakto.com.br/v8qz43t_899652"
+   class="vmp-button"
+   onclick="fbq('track', 'InitiateCheckout', {value: 67.00, currency: 'BRL', content_ids: ['vmp-realinhamento'], content_name: 'VMP Realinhamento', content_type: 'product'});">
+   QUERO ME REALINHAR AGORA
+</a>
 
-  <!-- INVISÍVEL -->
-  <div style="flex:1; min-width:260px; max-width:280px;">
-    <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
-      INVISÍVEL
-    </h1>
+<div class="cta-sub">
+  Acesso imediato. 14 dias pra testar ou seu dinheiro de volta.
+</div>
 
-    <div class="img-container">
-      <img src="img/img0001.jpg" onerror="this.src='img/placeholder.jpg'">
-    </div>
+<!-- 8. GARANTIA -->
+<div class="garantia">
+  Código de Defesa do Consumidor garante 7 dias.<br><br>
+  VMP te dá <strong>14 dias de garantia incondicional</strong>. Usou, não sentiu. Devolvo.
+</div>
 
-    <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
-      Fala e ninguém ouve.<br>
-      Entra e ninguém nota.<br>
-      Existe... mas não é visto.
-    </div>
-  </div>
-
-  <!-- IGNORADO -->
-  <div style="flex:1; min-width:260px; max-width:280px;">
-    <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
-      IGNORADO
-    </h1>
-
-    <div class="img-container">
-      <img src="img/img0003.jpg" alt="Ignorado" onerror="this.src='img/placeholder.jpg'">
-    </div>
-
-    <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
-      Você tenta falar.<br>
-      O grupo continua rindo.<br>
-      Viraram a cara e seguiram falando.
-    </div>
-  </div>
-  
-  <!-- PROGRAMADO -->
-  <div style="flex:1; min-width:260px; max-width:280px;">
-    <h1 style="color:#FFD700; font-size:20px; text-align:center; line-height:1.2; font-weight:700; margin-bottom:12px; text-shadow:0 0 12px rgba(212,175,55,0.18); display:block; width:100%;">
-      PROGRAMADO
-    </h1>
-
-    <div class="img-container">
-      <img src="img/img0002.jpg" onerror="this.src='img/placeholder.jpg'">
-    </div>
-
-    <div style="color:#e0e0e0; font-size:15px; line-height:1.6; text-align:center; margin-top:16px; padding:0 8px;">
-      Pra pedir licença.<br>
-      Pra se diminuir.<br>
-      Pra ser invisível.
-    </div>
-  </div>
-  
-  </div>
-
-  <div class="cta-final">
-    <a href="https://pay.cakto.com.br/v8qz43t_899652"
-       class="vmp-button vmp-button-large"
-       onclick="fbq('track', 'InitiateCheckout', {value: 67.00, currency: 'BRL', content_ids: ['vmp-delay-social'], content_name: 'VMP Delay Social', content_type: 'product'});">
-      CORRIGIR MEU DELAY SOCIAL AGORA
-    </a>
-    <div class="cta-sub">
-      Acesso imediato. 14 dias pra testar na pele ou seu dinheiro de volta.
-    </div>
-  </div>
-
-  <div class="garantia">
-    Código de Defesa do Consumidor garante 7 dias.<br><br>
-    VMP te dá <strong>14 dias de garantia incondicional</strong>. Usou, não sentiu. Devolvo.
-  </div>
-
-  <div class="footer-final">
-    Copyright 2026 – VMP<br>
-    Todos os direitos reservados.
-  </div>
+<!-- 9. RODAPÉ 2026 -->
+<div class="footer-final">
+  VMP - Sistema de Realinhamento © 2026. Todos os direitos reservados. <br>
+  Este produto não garante resultados. Qualquer resultado depende da aplicação individual.
+</div>
 
 </div>
 </body>
-     </html>
+</html>
