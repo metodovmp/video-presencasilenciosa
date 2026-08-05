@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>VMP - Sistema de Realinhamento</title>
+  <title>VMP - Sistema de Presença VMP</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Meta Pixel Code -->
   <script>
@@ -36,7 +36,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #0A0A0A;
+      background: #0B0B0B; /* preto premium fumê */
       color: #ffffff;
       font-family: 'Inter', sans-serif;
       display: flex;
@@ -44,7 +44,7 @@
       flex-direction: column;
     }
 
-.bainer-topo {
+   .bainer-topo {
       background:#ff0000;
       color:#fff;
       text-align:center;
@@ -55,7 +55,7 @@
       letter-spacing:0.5px;
     }
 
-.container {
+   .container {
       width: 100%;
       max-width: 900px;
       padding: 40px 16px;
@@ -64,25 +64,40 @@
       margin: 0 auto;
     }
 
-.dourado-metal {
-      background: linear-gradient(180deg, #FFD700 0%, #B8860B 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.25));
-    }
-
-.cabecalho {
-      font-size:13px;
+   .cabecalho {
+      font-size:12px;
       letter-spacing:2px;
-      font-weight:700;
+      font-weight:500;
       text-align:center;
       margin:0 0 24px 0;
       text-transform:uppercase;
       color: #999;
     }
 
-.legenda-video {
+    /* Hierarquia Dourada */
+   .titulo-l1 { /* NADA DÁ ERRADO */
+      background: linear-gradient(180deg, #FFD700 0%, #DAA520 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+   .titulo-l2 { /* MAS, */
+      background: linear-gradient(180deg, #D4AF37 0%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.8;
+    }
+   .titulo-l3 { /* NADA MUDA */
+      background: linear-gradient(180deg, #FFD700 0%, #C9A227 30%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.35));
+      font-size: 1.08em; /* 8% maior */
+    }
+
+   .legenda-video {
       color: #888;
       font-size: 12px;
       text-align: center;
@@ -90,17 +105,17 @@
       font-weight: 500;
     }
 
-.video-wrapper {
+   .video-wrapper {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
       overflow: hidden;
       border-radius: 0;
-      background: #0A0A0A;
+      background: #0B0B0B;
       margin-bottom: 32px;
     }
 
-.video-wrapper iframe {
+   .video-wrapper iframe {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -109,10 +124,10 @@
       border: none;
     }
 
-.vmp-button {
-      display: inline-block; /* MUDEI: não estica mais */
-      width: auto; /* MUDEI: abraça o texto */
-      padding: 18px 48px; /* MUDEI: mais lateral, menos altura */
+   .vmp-button {
+      display: inline-block;
+      width: auto;
+      padding: 18px 48px;
       background: linear-gradient(180deg, #FFD700 0%, #DAA520 100%);
       color: #000;
       text-decoration: none;
@@ -121,14 +136,22 @@
       border-radius: 999px;
       margin: 0 auto 24px;
       text-transform: uppercase;
-      letter-spacing: 1px; /* MUDEI: mais autoridade */
+      letter-spacing: 1px;
       box-shadow: 0 4px 20px rgba(218, 165, 32, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
       transition: all 0.3s ease;
     }
 
-.vmp-button:hover{
+   .vmp-button:hover{
       transform: translateY(-2px);
       box-shadow: 0 6px 25px rgba(218, 165, 32, 0.7), inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+
+   .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #B8860B, transparent);
+      margin: 40px 0;
+      opacity: 0.6;
     }
 
   </style>
@@ -137,26 +160,27 @@
 <body>
 
 <div class="bainer-topo">
-⚠️ OFERTA DE LANÇAMENTO: R$67 ATÉ HOJE 23:59
+⚠️ OFERTA DE LANÇAMENTO: R$67 SÓ ATÉ HOJE 23:59
 </div>
 
 <div class="container">
 
 <div class="cabecalho">
-● VMP - SISTEMA DE REALINHAMENTO
+Sistema de Presença VMP
 </div>
 
-<h1 style="font-size:34px; text-align:center; line-height:1.15; font-weight:800; margin:0 0 12px 0;" class="dourado-metal">
-NADA DÁ ERRADO <br>
-MAS, NADA MUDA
+<h1 style="font-size:34px; text-align:center; line-height:1.15; font-weight:800; margin:0 0 12px 0;">
+  <span class="titulo-l1">NADA DÁ ERRADO</span> <br>
+  <span class="titulo-l2">MAS,</span> <br>
+  <span class="titulo-l3">NADA MUDA</span>
 </h1>
 
-<p style="color:#FFFFFF; font-size:15px; text-align:center; line-height:1.6; margin:0 0 28px 0; font-weight:600;">
-Aqui tá a leitura que faltava
+<p style="color:#FFFFFF; font-size:15px; text-align:center; line-height:1.6; margin:0 0 8px 0; font-weight:600;">
+Descubra o padrão que está anulando sua presença.
 </p>
 
 <div class="legenda-video">
-Play obrigatório pra quem cansou de ser ignorado
+Em menos de 4 minutos, entenda por que sua presença não gera impacto.
 </div>
 
 <div class="video-wrapper">
@@ -166,24 +190,28 @@ Play obrigatório pra quem cansou de ser ignorado
 <div style="text-align:center; margin:32px 0;">
   <h3 style="color:#888; font-size:14px; letter-spacing:2px; font-weight:700; margin-bottom:16px; text-transform:uppercase;">VOCÊ SE RECONHECE AQUI?</h3>
   <p style="color:#777; font-size:15px; line-height:1.7; margin:0 0 16px 0; font-weight:500;">
-    Tenha acesso a um material único, e faça sua presença funcionar.
+    Comece a quebrar o padrão que está anulando sua presença.
   </p>
 </div>
 
 <a href="https://pay.cakto.com.br/v8qz43t_899652"
    class="vmp-button"
    onclick="fbq('track', 'InitiateCheckout', {value: 67.00, currency: 'BRL', content_ids: ['vmp-realinhamento'], content_name: 'VMP Realinhamento', content_type: 'product'});">
-   CORRIGIR AGORA
+   QUERO OS 7 PROTOCOLOS
 </a>
 
-<div style="font-size:13px; color:#999; margin-top:40px; line-height:1.7; font-weight:500;">
-  Código de Defesa do Consumidor garante 7 dias.<br><br>
-  VMP te dá <span class="dourado-metal" style="font-weight:700;">14 dias de garantia incondicional</span>. Usou, não sentiu. Devolvo.
+<div style="font-size:13px; color:#999; margin-top:32px; line-height:1.7; font-weight:500;">
+  Garantia incondicional de 7 dias.<br>
+  Se não fizer sentido para você, devolvemos 100% do seu investimento.
 </div>
 
-<div style="font-size:11px; color:#444; margin-top:40px; padding-top:30px; border-top:1px solid #1a1a1a; font-weight:400;">
-  VMP - Sistema de Realinhamento © 2026. Todos os direitos reservados. <br>
-  Este produto não garante resultados. Qualquer resultado depende da aplicação individual.
+<div class="divider"></div>
+
+<div style="font-size:11px; color:#444; padding-top:10px; font-weight:400;">
+  Sistema VMP © 2026.<br>
+  Todos os direitos reservados.<br>
+  Este produto não garante resultados.<br>
+  Os resultados dependem da aplicação individual.
 </div>
 
 </div>
