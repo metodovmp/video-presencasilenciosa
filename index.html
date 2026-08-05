@@ -44,7 +44,7 @@
       flex-direction: column;
     }
 
-   .bainer-topo {
+  .bainer-topo {
       background:#ff0000;
       color:#fff;
       text-align:center;
@@ -55,7 +55,7 @@
       letter-spacing:0.5px;
     }
 
-   .container {
+  .container {
       width: 100%;
       max-width: 900px;
       padding: 40px 16px;
@@ -64,7 +64,7 @@
       margin: 0 auto;
     }
 
-   .cabecalho {
+  .cabecalho {
       font-size:12px;
       letter-spacing:2px;
       font-weight:500;
@@ -75,20 +75,22 @@
     }
 
     /* Hierarquia Dourada */
-   .titulo-l1 { /* NADA DÁ ERRADO */
+  .titulo-l1 { /* NADA DÁ ERRADO */
       background: linear-gradient(180deg, #FFD700 0%, #DAA520 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-   .titulo-l2 { /* MAS, */
+  .titulo-l2 { /* MAS, */
       background: linear-gradient(180deg, #D4AF37 0%, #B8860B 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      opacity: 0.8;
+      opacity: 0.7; /* MUDEI: mais discreto */
+      font-size: 28px; /* MUDEI: 18% menor */
+      line-height: 1.2;
     }
-   .titulo-l3 { /* NADA MUDA */
+  .titulo-l3 { /* NADA MUDA */
       background: linear-gradient(180deg, #FFD700 0%, #C9A227 30%, #B8860B 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -97,7 +99,7 @@
       font-size: 1.08em; /* 8% maior */
     }
 
-   .legenda-video {
+  .legenda-video {
       color: #888;
       font-size: 12px;
       text-align: center;
@@ -105,7 +107,7 @@
       font-weight: 500;
     }
 
-   .video-wrapper {
+  .video-wrapper {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
@@ -115,7 +117,7 @@
       margin-bottom: 32px;
     }
 
-   .video-wrapper iframe {
+  .video-wrapper iframe {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -124,29 +126,30 @@
       border: none;
     }
 
-   .vmp-button {
+  .vmp-button {
       display: inline-block;
       width: auto;
-      padding: 18px 48px;
+      padding: 14px 44px; /* MUDEI: menos altura, mais autoridade */
       background: linear-gradient(180deg, #FFD700 0%, #DAA520 100%);
       color: #000;
       text-decoration: none;
       font-weight: 800;
       font-size: 16px;
-      border-radius: 999px;
+      border-radius: 999px; /* OVAL PERFEITO */
       margin: 0 auto 24px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px; /* MUDEI: mais premium */
       box-shadow: 0 4px 20px rgba(218, 165, 32, 0.5), inset 0 1px 0 rgba(255,255,255,0.4);
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 215, 0, 0.3); /* MUDEI: borda dourada sutil */
     }
 
-   .vmp-button:hover{
+  .vmp-button:hover{
       transform: translateY(-2px);
       box-shadow: 0 6px 25px rgba(218, 165, 32, 0.7), inset 0 1px 0 rgba(255,255,255,0.5);
     }
 
-   .divider {
+  .divider {
       width: 100%;
       height: 1px;
       background: linear-gradient(90deg, transparent, #B8860B, transparent);
@@ -169,7 +172,7 @@
 Sistema de Presença VMP
 </div>
 
-<h1 style="font-size:34px; text-align:center; line-height:1.15; font-weight:800; margin:0 0 12px 0;">
+<h1 style="font-size:34px; text-align:center; line-height:1.25; font-weight:800; margin:0 0 12px 0;"> <!-- MUDEI: line-height -->
   <span class="titulo-l1">NADA DÁ ERRADO</span> <br>
   <span class="titulo-l2">MAS,</span> <br>
   <span class="titulo-l3">NADA MUDA</span>
