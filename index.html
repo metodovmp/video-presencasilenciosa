@@ -32,9 +32,6 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
 
-  <!-- 1. Carregar o KVPlayer (propaga params da URL automaticamente) -->
-<script src="https://scripts.kvplayer.com/player/kvplayer.js" data-api-url="https://api.kvplayer.com"></script>
-
   <style>
     body {
       margin: 0;
@@ -108,24 +105,16 @@
       font-weight: 500;
     }
 
-.video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      overflow: hidden;
-      border-radius: 0;
-      background: #0B0B0B;
-      margin-bottom: 32px;
+.kv-player-wrapper-3729938d80 {
+    position: relative;
+    padding-top: calc(56.25% + 0px);
+    margin-bottom: 32px;
+}
+@media (max-width: 768px) {
+   .kv-player-wrapper-3729938d80 {
+        max-width: 100%!important;
     }
-
-.video-wrapper iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      border: none;
-    }
+}
 
 .vmp-button {
       display: inline-block;
@@ -186,8 +175,9 @@ Descubra o padrão que está anulando sua presença</p>
 <div class="legenda-video">
 Em menos de 4 minutos, entenda por que um homem calado com eixo gera impacto mesmo calado.</div>
 
-<div class="video-wrapper">
-    <iframe src="https://panel.kvplayer.com/embed/2827fc26da" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<!-- NOVO VÍDEO LEVE KV -->
+<div class="kv-player-wrapper-3729938d80">
+    <iframe src="https://panel.kvplayer.com/embed/3729938d80" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>
 
 <div style="text-align:center; margin:32px 0;">
