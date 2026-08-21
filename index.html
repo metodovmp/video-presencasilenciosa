@@ -140,12 +140,19 @@
       box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
       transition: all 0.3s ease;
       border: none;
+      cursor: pointer;
     }
 
 .vmp-button:hover{
       background: #C9A227;
       transform: translateY(-1px);
       box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+
+.vmp-button:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
     }
 
 .divider {
@@ -206,11 +213,9 @@ SISTEMA DE PRESENÇA VMP
   </p>
   </div>
 
-<a href="https://pay.cakto.com.br/v8qz43t_899652"
-   class="vmp-button"
-   onclick="fbq('track', 'InitiateCheckout', {value: 67.00, currency: 'BRL', content_ids: ['vmp-realinhamento'], content_name: 'VMP Realinhamento', content_type: 'product'});">
-   QUERO DOMINAR OS 7 PROTOCOLOS
-</a>
+<button id="btnVsl" class="vmp-button">
+   QUERO INICIAR OS 7 PROTOCOLOS
+</button>
 
 <div style="font-size:12px; color:#999; margin-bottom:24px; font-weight:500;">
   Acesso Imediato • 100% Online.</div>
@@ -230,5 +235,23 @@ SISTEMA DE PRESENÇA VMP
 </div>
 
 </div>
+
+<script>
+  const btnVsl = document.getElementById('btnVsl');
+
+  btnVsl.addEventListener('click', () => {
+    // Dispara evento do Pixel
+    fbq('track', 'InitiateCheckout', {value: 67.00, currency: 'BRL', content_ids: ['vmp-realinhamento'], content_name: 'VMP Realinhamento', content_type: 'product'});
+
+    // Gatilho de "Ajustando Leitura"
+    btnVsl.innerText = "Ajustando sua Presença…";
+    btnVsl.disabled = true;
+
+    setTimeout(() => {
+      window.location.href = "https://pay.cakto.com.br/v8qz43t_899652";
+    }, 1500);
+  });
+</script>
+
 </body>
 </html>
